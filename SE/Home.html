@@ -8,32 +8,108 @@
 </head>
 <body>
   <header>
-   <div class="logo">
-    <img src="SE/logo.png" alt="Logo">
-  </div>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
     <h1>GUCBank</h1>
-	
   </header>
-    <nav>
+  <nav>
     <ul class="menu">
       <li><a href="Home.html" id="home">Home</a></li>
-	  <li><a href="Anouncements.html" id="anouncments">Anouncements</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
       <li><a href="ContactUs.html" id="contact">Contact</a></li>
     </ul>
   </nav>
-  <main>
-    <section>
-      <h2>Select a Portal:</h2>
-      <div class="portal-buttons">
-        <button id="admin-login" class="portal-button">Admin Portal</button>
-        <button id="banker-login" class="portal-button">Banker Portal</button>
-       <button id="client-portal" class="portal-button">Client Portal</button>
-      </div>
-    </section>
-  </main>
+ <!-- Move the banner divs inside the main section -->
+<main class="main-content">
+  <section>
+    <h2>Login</h2>
+    <div class="form-container">
+      <form id="banker-login-form">
+        <div class="form-group">
+          <label for="u-name">Username:</label>
+          <input type="text" id="u-name" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" required>
+        </div>
+        <button id="Login" class="Login">Login</button>
+      </form>
+    </div>
+  </section>
+  <section>
+    <h2>Sign Up</h2>
+    <div class="form-container">
+      <form id="banker-signup-form">
+        <div class="form-group">
+          <label for="new-national-id">New National ID:</label>
+          <input type="text" id="new-national-id" required>
+        </div>
+        <div class="form-group">
+          <label for="Name">Name:</label>
+          <input type="text" id="Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="text" id="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="new-username">New Username:</label>
+          <input type="text" id="new-username" required>
+        </div>
+        <div class="form-group">
+          <label for="EmployerID">(If Applicable) Employer ID:</label>
+          <input type="text" id="employerID">
+        </div>
+        <div class="form-group">
+          <label for="EmployerPass">(If Applicable) Employer Password:</label>
+          <input type="password" id="EmployerPass">
+        </div>
+        <div class="form-group">
+          <label for="new-password">New Password:</label>
+          <input type="password" id="new-password" required>
+        </div>
+        <button id="SignUp" class="SignUp">Sign Up</button>
+      </form>
+    </div>
+  </section>
+  <!-- Move the banners here -->
+  <div class="banner" id="signup-banner">
+    <span class="banner-text">Signup completed. Please login.</span>
+  </div>
+  <div class="banner" id="error-banner">
+    <span class="banner-text">Incorrect username/password.</span>
+  </div>
+</main>
+
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
+  <script>
+    document.getElementById("SignUp").addEventListener("click", function() {
+      var signupBanner = document.getElementById("signup-banner");
+      signupBanner.style.display = "block";
+    });
+  </script>
+  <script>
+    document.getElementById("Login").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent form submission
+      var username = document.getElementById("u-name").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "Banker" && password === "Banker123") {
+        window.location.href = "BankerPage.html";
+      } else if (username === "Client" && password === "Client123") {
+        window.location.href = "ClientPage.html";
+      } else if (username === "Admin" && password === "Admin123") {
+        window.location.href = "AdminPage.html";
+      } else {
+        var errorBanner = document.getElementById("error-banner");
+        errorBanner.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>
