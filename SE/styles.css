@@ -154,11 +154,19 @@ label {
   border-top: 1px solid #ddd;
   padding: 10px;
   text-align: center;
+  position: fixed;
+  bottom: 70px; /* Adjust the value as needed */
+  left: 0;
+  width: 100%;
+}
+.line {
+  width: 2px;
+  height: 50%;
+  background-color: black;
   position: absolute;
-  overflow: hidden;
-  
-  bottom: 0;
- width:96.5%;
+  top: 150;
+  left: 49%;
+  transform: translateX(-50%);
 }
 .main-content {
   margin-bottom: 28px; /* Adjust the value as needed */
@@ -216,5 +224,8 @@ footer {
   padding: 10px;
   text-align: center;
   color: white;
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

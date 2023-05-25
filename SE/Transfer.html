@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Transfer</title>
+  <style>
+   
+.transfer-section {
+    float: left;
+    width: 33.33%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+    .transfer-container {
+	
+    justify-content: space-between;
+      width: 300px;
+      border: 2px solid black;
+      padding: 20px;
+      margin: 0 100px;
+    }
+
+    .transfer-label {
+      display: block;
+      margin-bottom: 10px;
+	  
+    }
+
+    .transfer-input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .transfer-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .transfer-sections {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+	.transfer-label {
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Transfer</h1>
+    <a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+  <main>
+    <div class="transfer-sections">
+<div class="transfer-section">
+      <div class="transfer-container">
+        <h2 class="transfer-label">Domestic Transfer</h2>
+        <label for="domestic-account">Account Number:</label>
+        <input type="text" id="domestic-account" class="transfer-input" placeholder="Enter account number">
+        <label for="domestic-amount">Amount:</label>
+        <input type="number" id="domestic-amount" class="transfer-input" placeholder="Enter amount">
+        <label for="domestic-bank">Bank Name:</label>
+        <input type="text" id="domestic-bank" class="transfer-input" placeholder="Enter bank name">
+        <label for="domestic-password">Password:</label>
+        <input type="password" id="domestic-password" class="transfer-input" placeholder="Enter password">
+        <button id="domestic-transfer-button" class="transfer-button">Transfer</button>
+      </div>
+</div>
+
+	<div class="transfer-section">
+      <div class="transfer-container">
+        <h2 class="transfer-label">Internal Transfer</h2>
+        <label for="internal-account">Account Number:</label>
+        <input type="text" id="internal-account" class="transfer-input" placeholder="Enter account number">
+        <label for="internal-amount">Amount:</label>
+        <input type="number" id="internal-amount" class="transfer-input" placeholder="Enter amount">
+        <label for="internal-password">Password:</label>
+        <input type="password" id="internal-password" class="transfer-input" placeholder="Enter password">
+        <button id="internal-transfer-button" class="transfer-button">Transfer</button>
+      </div>
+</div>
+<div class="transfer-section">
+      <div class="transfer-container">
+        <h2 class="transfer-label">International Transfer</h2>
+        <label for="international-account">Account Number:</label>
+        <input type="text" id="international-account" class="transfer-input" placeholder="Enter account number">
+        <label for="international-amount">Amount:</label>
+        <input type="number" id="international-amount" class="transfer-input" placeholder="Enter amount">
+        <label for="international-swift">Swift Code:</label>
+        <input type="text" id="international-swift" class="transfer-input" placeholder="Enter Swift code">
+        <label for="international-password">Password:</label>
+        <input type="password" id="international-password" class="transfer-input" placeholder="Enter password">
+        <button id="international-transfer-button" class="transfer-button">Transfer</button>
+      </div>
+    </div>
+	</div>
+	<div class="banner" id="transfer-banner">
+  <span class="banner-text" id="transfer-banner-text"></span>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
