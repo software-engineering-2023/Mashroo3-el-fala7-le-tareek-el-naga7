@@ -230,16 +230,16 @@ button {
     font-family: 'Roboto', sans-serif;
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: #52796f;
     color: white;
     cursor: pointer;
     font-size: 18px;
     border-radius: 5px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+    button:hover {
+        background-color: #354f52;
+    }
 
 /* Footer styles */
 footer {
