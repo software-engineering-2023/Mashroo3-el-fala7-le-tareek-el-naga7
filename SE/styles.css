@@ -167,15 +167,15 @@ label {
 }
 
 .banner {
-  display: none;
-  background-color: #f8f8f8;
-  border-top: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 70px; /* Adjust the value as needed */
-  left: 0;
-  width: 100%;
+    display: none;
+    background-color: #81b29a;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 70px; /* Adjust the value as needed */
+    left: 0;
+    width: 100%;
 }
 .line {
   width: 2px;
