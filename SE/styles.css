@@ -11,13 +11,12 @@ body {
 
 /* Header styles */
 header {
-  background-color: #007bff;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-   justify-content: space-between;
-  margin-bottom: 0;
- 
+    background-color: #f4f1de;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
 }
 
 .menu {
