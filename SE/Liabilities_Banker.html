@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Liabilities</title>
+  <style>
+    .left-side {
+      float: left;
+      width: 50%;
+      border-right: 2px solid black;
+      padding-right: 10px;
+      box-sizing: border-box;
+    }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+
+    .credit-card-table, .loan-table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 2px solid black;
+    }
+
+    .credit-card-table th, .credit-card-table td, .loan-table th, .loan-table td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+{
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Liabilities</h1>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="ClientPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="my-account">My Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo.html">Personal Information</a></li>
+            <li><a href="Liabilities.html">Liabilities</a></li>
+            <li><a href="Balance.html">Balance</a></li>
+			
+          </ul>
+        </li>
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="Bills.html">Bills</a></li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+      </ul>
+    </nav>
+  <main>
+    <div class="left-side">
+      <h2>Credit Cards</h2>
+      <table class="credit-card-table">
+        <thead>
+          <tr>
+            <th>Card ID</th>
+            <th>Card Number</th>
+            <th>CVV</th>
+            <th>Issue Date</th>
+            <th>Expiry Date</th>
+            <th>Due Amount</th>
+            <th>Interest Rate</th>
+            <th>Card Maximum Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1386514201948372</td>
+            <td>003</td>
+            <td>12/2021</td>
+            <td>1/2025</td>
+            <td>$14,200</td>
+            <td>2%</td>
+            <td>$50,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="credit-card-button">Accept</button>
+      <button class="credit-card-button">Reject</button>
+    </div>
+    <div class="right-side">
+      <h2>Loans</h2>
+      <table class="loan-table">
+        <thead>
+          <tr>
+            <th>Loan ID</th>
+            <th>Loan Number</th>
+            <th>Loan Type</th>
+            <th>Loan Amount</th>
+            <th>Remaining Amount</th>
+            <th>Due Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>7364529037165321</td>
+            <td>Car</td>
+            <td>$400,000</td>
+            <td>$290,000</td>
+            <td>12/2023</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2837461074028364</td>
+            <td>Personal</td>
+            <td>$30,000</td>
+            <td>$17,000</td>
+            <td>1/2024</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="clear: both;"></div>
+  </main>
+  <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+    <script src="script.js"></script>
+	
+	<script>
+
+
+
+</script>
+
+</body>
+</html>
