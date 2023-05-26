@@ -11,14 +11,14 @@ body {
 
 /* Header styles */
 header {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Teko', sans-serif;
     background-color: #f4f1de;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0;
-    font-weight:100;
+    font-weight: lighter 300;
 }
 
 .menu {
