@@ -1,7 +1,10 @@
 /* Body styles */
+<style >
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+</style >
 body {
     font-family: 'Teko', sans-serif;
-    margin: 0;
+    sans-serif margin: 0;
     padding: 0;
     background-color: #f4f1de;
     display: flex;
@@ -11,7 +14,6 @@ body {
 
 /* Header styles */
 header {
-    font-family: 'Teko', sans-serif;
     background-color: #f4f1de;
     padding: 10px;
     display: flex;
