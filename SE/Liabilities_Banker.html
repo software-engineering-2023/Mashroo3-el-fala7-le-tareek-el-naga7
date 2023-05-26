@@ -10,39 +10,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Liabilities</title>
-    <style>
-        .left-side {
-            float: left;
-            width: 50%;
-            border-right: 2px solid black;
-            padding-right: 10px;
-            box-sizing: border-box;
-        }
+  <title>Liabilities</title>
+  <style>
+    .left-side {
+      float: left;
+      width: 50%;
+      border-right: 2px solid black;
+      padding-right: 10px;
+      box-sizing: border-box;
+    }
 
-        .right-side {
-            float: right;
-            width: 50%;
-            padding-left: 10px;
-            box-sizing: border-box;
-        }
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
 
-        .credit-card-table, .loan-table {
-            border-collapse: collapse;
-            width: 100%;
-            border: 2px solid black;
-        }
+    .credit-card-table, .loan-table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 2px solid black;
+    }
 
-            .credit-card-table th, .credit-card-table td, .loan-table th, .loan-table td {
-                border: 1px solid black;
-                padding: 8px;
-                text-align: left;
-            }
-
-        .credit-card-button, .loan-button {
-            margin-top: 10px;
-        }
-    </style>
+    .credit-card-table th, .credit-card-table td, .loan-table th, .loan-table td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+.credit-card-button, .loan-button {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -50,23 +49,22 @@
       <img src="SE/logo.png" alt="Logo">
     </div>
     <h1>Liabilities</h1>
-	<a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
    <nav>
       <ul class="menu">
-        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li><a href="BankerPage.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
         <li class="dropdown">
-          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <a href="#" id="my-account">My Account &#9662;</a>
           <ul class="dropdown-menu">
-            <li><a href="Personalinfo_admin.html">Personal Information</a></li>
-            <li><a href="Liabilities_admin.html">Liabilities</a></li>
-            <li><a href="Balance_admin.html">Balance</a></li>
-            <li><a href="Complaints.html">Complaints</a></li>
+            <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
+            <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+            <li><a href="Balance_Banker.html">Balance</a></li>
+			
           </ul>
         </li>
-		 <li><a href="Transfers_history.html">Transfer</a></li>
-         <li><a href="Bills_admin.html">Bills</a></li>
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="Bills_Banker.html">Bills</a></li>
 		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
 
       </ul>
@@ -100,6 +98,8 @@
           </tr>
         </tbody>
       </table>
+      <button class="credit-card-button">Accept</button>
+      <button class="credit-card-button">Reject</button>
     </div>
     <div class="right-side">
       <h2>Loans</h2>
@@ -140,6 +140,12 @@
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
   </footer>
     <script src="script.js"></script>
+	
+	<script>
+
+
+
+</script>
 
 </body>
 </html>

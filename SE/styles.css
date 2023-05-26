@@ -1,16 +1,18 @@
 /* Body styles */
 body {
-    font-family: 'Teko', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f1de;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-weight:300 lighter;
 }
 
 /* Header styles */
 header {
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f1de;
     padding: 10px;
     display: flex;
@@ -21,11 +23,11 @@ header {
 }
 
 .menu {
+    font-family: 'Roboto', sans-serif;
     background-color: #e07a5f;
     padding: 10px 0;
     text-align: center;
     margin-top: 0;
-    font-weight: bold;
 }
 
 .menu li {
@@ -33,13 +35,13 @@ header {
   margin: 0 10px;
 }
 
-.menu li a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease;
-   font-weight:bold;
-}
+    .menu li a {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+    }
 
 .menu li a:hover {
   background-color: #d9d9d9;
@@ -72,13 +74,13 @@ header {
   padding:5px;
 }
 
-.dropdown-menu li a {
-  color: #00529f;
-  text-decoration: none;
-  padding: 5px 10px;
-  display:block;
-   font-weight:bold;
-}
+    .dropdown-menu li a {
+        font-family: 'Roboto', sans-serif;
+        color: #00529f;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: block;
+    }
 
 .dropdown-menu li a:hover {
   background-color: #e0e0e0;
@@ -105,14 +107,15 @@ header {
 }
 
 h1 {
+    font-family: 'Teko', sans-serif;
     color: #81b29a;
     margin: 0;
     text-align: center;
-    font-size: 60px; /* Adjust the font size as needed */
+    font-size: 70px; /* Adjust the font size as needed */
     font-weight: bold;
     flex: 1;
     margin-left: -140px;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* Main section styles */
@@ -126,9 +129,9 @@ section {
 }
 
 h2 {
-  color: #81b29a;
-  text-align: center;
-  font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+    color: #81b29a;
+    text-align: center;
 }
 
 /* Form styles */
@@ -145,16 +148,17 @@ h2 {
 }
 
 label {
-  width: 120px;
-  font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+    width: 120px;
 }
 .textbox {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .textarea {
@@ -169,12 +173,12 @@ label {
 
 .banner {
     display: none;
-    background-color: #81b29a;
+    background-color: #e07a5f;
     border-top: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     position: fixed;
-    bottom: 70px; /* Adjust the value as needed */
+    bottom: 45px; /* Adjust the value as needed */
     left: 0;
     width: 100%;
 }
@@ -192,13 +196,14 @@ label {
 }
 
 .banner-text {
-  color: #333;
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-100%, -50%);
-  animation: bannerMove 30s linear infinite;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    animation: bannerMove 30s linear infinite;
 }
 
 @keyframes bannerMove {
@@ -214,31 +219,32 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  flex: 1;
-  padding: 5px;
-  font-size: 16px;
-   font-weight:bold;
-  border-radius: 5px;
-  border: 1px solid #cccccc;
+    font-family: 'Roboto', sans-serif;
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
 }
 
 button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    background-color: #52796f;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+    button:hover {
+        background-color: #354f52;
+    }
 
 /* Footer styles */
 footer {
+    font-family: 'Roboto', sans-serif;
     background-color: #81b29a;
     padding: 10px;
     text-align: center;
@@ -247,4 +253,5 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 25px;
 }

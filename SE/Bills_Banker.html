@@ -10,73 +10,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Bills</title>
-    <style>
-        .bill-section {
-            float: left;
-            width: 33.33%;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+  <title>Bills</title>
+  <style>
+    .bill-section {
+      float: left;
+      width: 33.33%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .bill-container {
-            width: 100%;
-        }
+    .bill-container {
+      width: 100%;
+    }
 
-        .bill-title {
-            font-size: 24px;
-            font-weight: bold;
-        }
+    .bill-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 10px;
-        }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
 
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
 
-        input[type="text"],
-        input[type="number"] {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
 
-        .gas-pay-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
-        .water-pay-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-
-        .electricity-pay-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    .gas-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	    .water-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	    .electricity-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -88,19 +86,19 @@
   </header>
   <nav>
     <ul class="menu">
-      <li><a href="ClientPage.html" id="home">Home</a></li>
+      <li><a href="BankerPage.html" id="home">Home</a></li>
       <li><a href="ContactUs.html" id="contact">Contact</a></li>
       <li class="dropdown">
-        <a href="#" id="my-account">My Account &#9662;</a>
+        <a href="#" id="client-account">Client's Account &#9662;</a>
         <ul class="dropdown-menu">
-          <li><a href="Personalinfo.html">Personal Information</a></li>
-          <li><a href="Liabilities.html">Liabilities</a></li>
-          <li><a href="Balance.html">Balance</a></li>
-		  
+          <li><a href="Personalinfo_Banker.html">Personal Information</a></li>
+          <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+          <li><a href="Balance_Banker.html">Balance</a></li>
+          <li><a href="Complaints.html">Complaints</a></li>
         </ul>
       </li>
-	   <li><a href="Transfer.html">Transfer</a></li>
-	   <li><a href="Bills.html">Bills</a></li>
+	   <li><a href="Transfers_history.html">Transfer</a></li>
+	   <li><a href="Bills_Banker.html">Bills</a></li>
       <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
     </ul>
   </nav>
@@ -142,9 +140,6 @@
             </tr>
           </tbody>
         </table>
-        <input type="text" id="gas-bill-id" placeholder="Enter bill ID">
-        <input type="number" id="gas-amount" placeholder="Enter payment amount">
-        <button class="gas-pay-button">Pay</button>
       </div>
     </div>
     <div class="bill-section">
@@ -184,9 +179,6 @@
             </tr>
           </tbody>
         </table>
-        <input type="text" id="water-bill-id" placeholder="Enter bill ID">
-        <input type="number" id="water-amount" placeholder="Enter payment amount">
-        <button class="water-pay-button">Pay</button>
       </div>
     </div>
     <div class="bill-section">
@@ -226,45 +218,6 @@
             </tr>
           </tbody>
         </table>
-        <input type="text" id="electricity-bill-id" placeholder="Enter bill ID">
-        <input type="number" id="electricity-amount" placeholder="Enter payment amount">
-        <button class="electricity-pay-button">Pay</button>
-      </div>
-    </div>
-	<div class="banner" id="bills-banner">
-  <span class="banner-text" id="bills-banner-text"></span>
-</div>
-  </main>
-  <footer>
-    <p>&copy; 2023 GUCBank. All rights reserved.</p>
-  </footer>
-  <script src="script.js"></script>
-  
-  <script>
- 
-document.addEventListener("DOMContentLoaded", function() {
-  var elec = document.querySelector('.electricity-pay-button');
-  var water = document.querySelector('.water-pay-button');
-  var gas = document.querySelector('.gas-pay-button');
-  var banner = document.getElementById('bills-banner');
-  var bannerText = document.getElementById('bills-banner-text');
-
-  elec.addEventListener('click', function() {
-      bannerText.textContent = 'Electricity bill payment will be made';
-      banner.style.display = 'block';
-  });
-   water.addEventListener('click', function() {
-      bannerText.textContent = 'Water bill payment will be made';
-      banner.style.display = 'block';
-  });
-  gas.addEventListener('click', function() {
-   bannerText.textContent = 'Gas bill payment will be made';
-      banner.style.display = 'block';
-  });
-  });
-
-
-
-</script>
+       
 </body>
 </html>
