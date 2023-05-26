@@ -35,13 +35,14 @@ header {
   margin: 0 10px;
 }
 
-.menu li a {
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  transition: background-color 0.3s ease;
-   font-weight:bold;
-}
+    .menu li a {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+    }
 
 .menu li a:hover {
   background-color: #d9d9d9;
@@ -148,16 +149,18 @@ h2 {
 }
 
 label {
-  width: 120px;
-  font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+    width: 120px;
+    font-weight: bold;
 }
 .textbox {
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .textarea {
@@ -172,7 +175,7 @@ label {
 
 .banner {
     display: none;
-    background-color: #81b29a;
+    background-color: #84a98c;
     border-top: 1px solid #ddd;
     padding: 10px;
     text-align: center;
@@ -195,13 +198,14 @@ label {
 }
 
 .banner-text {
-  color: #333;
-  white-space: nowrap;
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-100%, -50%);
-  animation: bannerMove 30s linear infinite;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+    animation: bannerMove 30s linear infinite;
 }
 
 @keyframes bannerMove {
@@ -217,23 +221,25 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  flex: 1;
-  padding: 5px;
-  font-size: 16px;
-   font-weight:bold;
-  border-radius: 5px;
-  border: 1px solid #cccccc;
+    font-family: 'Roboto', sans-serif;
+    flex: 1;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
 }
 
 button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 button:hover {
@@ -242,6 +248,7 @@ button:hover {
 
 /* Footer styles */
 footer {
+    font-family: 'Roboto', sans-serif;
     background-color: #81b29a;
     padding: 10px;
     text-align: center;
