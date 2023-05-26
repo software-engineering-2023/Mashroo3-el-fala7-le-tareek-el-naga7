@@ -106,23 +106,69 @@
         </tbody>
       </table>
     </div>
-    <div class="right-side">
-     
-      <div class="buttons">
-        <button>Update Address</button>
-      </div>
-      <div class="buttons">
-        <button>Report Issue</button>
-      </div>
-      <div class="buttons">
-        <button>Send Bank Statement Request</button>
-      </div>
-    </div>
+   <div class="right-side">
+  <div class="buttons">
+    <label for="address-input">New Address:</label>
+    <input type="text" id="address-input" class="textbox" placeholder="Enter new address">
+    <button class="AddressButton">Update Address</button>
+  </div>
+  <div class="buttons">
+    <label for="issue-input">Report Issue:</label>
+    <textarea id="issue-input" class="textbox" placeholder="Enter your issue"></textarea>
+    <button class="ReportButton">Report Issue</button>
+  </div>
+  <div class="buttons">
+    <button class="RequestButton">Send Bank Statement Request</button>
+  </div>
+</div>
+
     <div style="clear: both;"></div>
+	<div class="banner" id="personalInfo-banner">
+  <span class="banner-text" id="personalInfo-banner-text"></span>
+</div>
   </main>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
-  </footer>  <script src="script.js"></script>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  var AddressButton = document.querySelector('.AddressButton');
+  var RequestButton = document.querySelector('.RequestButton');
+  var ReportButton = document.querySelector('.ReportButton');
+  var banner = document.getElementById('personalInfo-banner');
+  var bannerText = document.getElementById('personalInfo-banner-text');
 
+  AddressButton.addEventListener('click', function() {
+    
+      var add = document.querySelector('#address-input').value;
+     
+
+      bannerText.textContent = 'New Address: ' + add + ' Will be added shortly';
+      banner.style.display = 'block';
+   
+      
+   
+  });
+   ReportButton.addEventListener('click', function() {
+    
+       var issue = document.querySelector('#issue-input').value;
+     
+
+      bannerText.textContent = 'Issue: ' + issue + 'Will be sent!';
+      banner.style.display = 'block';
+   
+  });
+  RequestButton.addEventListener('click', function() {
+   bannerText.textContent = 'Your bank statement will be sent to you shortly!';
+      banner.style.display = 'block';
+  
+  });
+  });
+
+
+
+</script>
 </body>
 </html>

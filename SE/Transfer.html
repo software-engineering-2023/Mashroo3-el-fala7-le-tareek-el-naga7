@@ -35,7 +35,25 @@
       margin-bottom: 10px;
     }
 
-    .transfer-button {
+    .dms-transfer-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	   .intr-transfer-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	   .intn-transfer-button {
       width: 100%;
       padding: 10px;
       background-color: #4CAF50;
@@ -65,6 +83,23 @@
     <h1>Transfer</h1>
     <a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="ClientPage.html" id="home">Home</a></li>
+      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" id="my-account">My Account &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="Personalinfo.html">Personal Information</a></li>
+          <li><a href="Liabilities.html">Liabilities</a></li>
+          <li><a href="Balance.html">Balance</a></li>
+		  
+        </ul>
+      </li>
+	   <li><a href="Transfer.html">Transfer</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    </ul>
+  </nav>
   <main>
     <div class="transfer-sections">
 <div class="transfer-section">
@@ -78,7 +113,7 @@
         <input type="text" id="domestic-bank" class="transfer-input" placeholder="Enter bank name">
         <label for="domestic-password">Password:</label>
         <input type="password" id="domestic-password" class="transfer-input" placeholder="Enter password">
-        <button id="domestic-transfer-button" class="transfer-button">Transfer</button>
+        <button class="dms-transfer-button">Transfer</button>
       </div>
 </div>
 
@@ -91,7 +126,7 @@
         <input type="number" id="internal-amount" class="transfer-input" placeholder="Enter amount">
         <label for="internal-password">Password:</label>
         <input type="password" id="internal-password" class="transfer-input" placeholder="Enter password">
-        <button id="internal-transfer-button" class="transfer-button">Transfer</button>
+        <button class="intr-transfer-button">Transfer</button>
       </div>
 </div>
 <div class="transfer-section">
@@ -105,7 +140,7 @@
         <input type="text" id="international-swift" class="transfer-input" placeholder="Enter Swift code">
         <label for="international-password">Password:</label>
         <input type="password" id="international-password" class="transfer-input" placeholder="Enter password">
-        <button id="international-transfer-button" class="transfer-button">Transfer</button>
+        <button  class="intn-transfer-button">Transfer</button>
       </div>
     </div>
 	</div>
@@ -120,5 +155,63 @@
   </footer>
   
   <script src="script.js"></script>
+  
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  var dmsTransferButton = document.querySelector('.dms-transfer-button');
+  var intrTransferButton = document.querySelector('.intr-transfer-button');
+  var intnTransferButton = document.querySelector('.intn-transfer-button');
+  var banner = document.getElementById('transfer-banner');
+  var bannerText = document.getElementById('transfer-banner-text');
+
+  dmsTransferButton.addEventListener('click', function() {
+    var password = document.querySelector('#domestic-password').value;
+
+    if (password === 'Client123') {
+      var acc = document.querySelector('#domestic-account').value;
+      var am = document.querySelector('#domestic-amount').value;
+      var bank = document.querySelector('#domestic-bank').value;
+
+      bannerText.textContent = 'Domestic Transfer: Transferring ' + am + ' to ' + acc + ' in ' + bank;
+      banner.style.display = 'block';
+    } else {
+      bannerText.textContent = 'Wrong Password!!!!!';
+      banner.style.display = 'block';
+    }
+  });
+
+  intrTransferButton.addEventListener('click', function() {
+    var password = document.querySelector('#internal-password').value;
+
+    if (password === 'Client123') {
+      var acc = document.querySelector('#internal-account').value;
+      var am = document.querySelector('#internal-amount').value;
+
+      bannerText.textContent = 'Internal Transfer: Transferring ' + am + ' to ' + acc;
+      banner.style.display = 'block';
+    } else {
+      bannerText.textContent = 'Wrong Password!!!!!';
+      banner.style.display = 'block';
+    }
+  });
+
+  intnTransferButton.addEventListener('click', function() {
+    var password = document.querySelector('#international-password').value;
+
+    if (password === 'Client123') {
+      var acc = document.querySelector('#international-account').value;
+      var am = document.querySelector('#international-amount').value;
+      var swift = document.querySelector('#international-swift').value;
+
+      bannerText.textContent = 'International Transfer: Transferring ' + am + ' to ' + acc + ' with Swift: ' + swift;
+      banner.style.display = 'block';
+    } else {
+      bannerText.textContent = 'Wrong Password!!!!!';
+      banner.style.display = 'block';
+    }
+  });
+});
+</script>
+
 </body>
 </html>

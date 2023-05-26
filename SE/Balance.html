@@ -172,5 +172,40 @@
   </footer>
   
   <script src="script.js"></script>
+  <script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+      // Get the "Add to Card" button element
+      var addButton = document.querySelector('.transaction-button');
+
+      // Add click event listener to the button
+      addButton.addEventListener('click', function() {
+        // Get the selected card from the dropdown menu
+        var selectedCard = document.querySelector('#transaction-card').value;
+
+        // Get the transaction amount
+        var transactionAmount = document.querySelector('#transaction-amount').value;
+
+        // Get the banner element
+        var banner = document.getElementById('transaction-banner');
+
+        // Get the banner text element
+        var bannerText = document.getElementById('transaction-banner-text');
+        
+        // Set the banner text
+        bannerText.textContent = 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.';
+
+        // Show the banner
+        banner.style.display = 'block';
+      });
+
+      // Get the banner close button element
+     
+    });
+	
+  
+  
+  
+  </script>
 </body>
 </html>
