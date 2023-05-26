@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Balance</title>
+  <style>
+    body {
+      position: relative;
+    }
+	 
+
+    .left-side {
+      float: left;
+      width: 50%;
+      padding-right: 10px;
+      box-sizing: border-box;
+	  display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+    }
+
+    .savings-window {
+      width: 250px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f2f2f2;
+      border: 2px solid black;
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .debit-card-table {
+      border-collapse: collapse;
+      width: 100%;
+      border: 2px solid black;
+      margin-bottom: 20px;
+    }
+
+    .debit-card-table th,
+    .debit-card-table td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .transaction-container {
+      margin-bottom: 20px;
+    }
+
+    .transaction-label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .transaction-input {
+      width: 100px;
+      margin-bottom: 5px;
+    }
+
+    .transaction-button {
+      margin-top: 10px;
+    }
+
+    .sign-out-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Balance</h1>
+    <a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="AdminPage.html" id="home">Home</a></li>
+      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" id="client-account">Client's Account &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="Personalinfo_admin.html">Personal Information</a></li>
+          <li><a href="Liabilities_admin.html">Liabilities</a></li>
+          <li><a href="Balance_admin.html">Balance</a></li>
+          <li><a href="Complaints.html">Complaints</a></li>
+        </ul>
+      </li>
+	   <li><a href="Transfers_history.html" id = "transfer">Transfer</a></li>
+       <li><a href="Bills_admin.html">Bills</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="left-side">
+      <h2>Savings:</h2>
+      <div class="savings-window">
+        724,937
+      </div>
+    </div>
+	  <div class="line"></div>
+    <div class="right-side">
+      <h2>Debit Cards</h2>
+      <table class="debit-card-table">
+        <thead>
+          <tr>
+            <th>Card ID</th>
+            <th>Card Number</th>
+            <th>CVV</th>
+            <th>Issue Date</th>
+            <th>Expiry Date</th>
+            <th>Available Balance</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1234567890123456</td>
+            <td>123</td>
+            <td>01/2022</td>
+            <td>01/2027</td>
+            <td>21,500</td>
+            
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>9876543210987654</td>
+            <td>789</td>
+            <td>05/2022</td>
+            <td>05/2027</td>
+            <td>2,500</td>
+           
+          </tr>
+        </tbody>
+      </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
