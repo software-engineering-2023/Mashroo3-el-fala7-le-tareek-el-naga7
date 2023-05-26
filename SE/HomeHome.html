@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Homes</title>
+  <style>
+    /* CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60vh;
+      padding: 20px;
+    }
+
+    .message {
+      flex-basis: 50%;
+      padding-left:50px;
+      font-size: 20px;
+      font-style: italic;
+      font-family: 'Pacifico', cursive;
+      line-height: 1.5;
+	  padding-bottom:100px;
+    }
+
+    .logo {
+      flex-basis: 50%;
+      text-align: right;
+	  	  padding-bottom:50px;
+		  padding-right:50px;
+
+    }
+
+    .logo img {
+      max-width: 600px;
+      height: auto;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 10px;
+	 
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #e07a5f;
+      color: #f4f1de;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	  	  
+	
+
+    }
+	.custom-button{
+	 display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #e07a5f;
+      color: #f4f1de;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+	
+	}
+	
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+      }
+
+      .message, .logo {
+        flex-basis: auto;
+      }
+    }
+	
+.logo2 {
+  margin-right: 10px;
+}
+
+.logo2 img {
+  max-width: 120px;
+  height: auto;
+  content: url("logo.png");
+}
+  </style>
+</head>
+<body>
+<header>
+   <div class="logo2">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+	
+    <h1>GUCBank</h1>
+	 
+  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="Home.html" id="home">Home</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="message">
+      <h2>Welcome to Our Website</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc ac tellus posuere mollis. Mauris sagittis iaculis purus vel venenatis. Fusce consectetur lectus quis ligula lobortis, nec finibus nunc pulvinar. Phasellus sed nibh sapien. Etiam a lacus condimentum, commodo nulla in, accumsan libero. Sed vel ultrices leo. Nam ultrices tristique pharetra.</p>
+      <p>Quisque nec ex eget lacus viverra tincidunt a id risus. Sed elementum iaculis ligula eget feugiat. Ut tristique felis nec eros dictum, id pellentesque enim pulvinar. Duis nec varius elit, vel congue nisl. Donec tincidunt orci et ante hendrerit rutrum.</p>
+      <p>Thank you for visiting our website. If you have any questions or need assistance, feel free to contact us.</p>
+    </div>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Company Logo">
+    </div>
+  </div>
+  <div class="btn-container">
+    <button onclick="redirectToPage()" class="custom-button">Sign Up / Log In</button>
+  </div>
+   <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+   
+
+  <script>
+    function redirectToPage() {
+      window.location.href = "Home.html";
+    }
+  </script>
+</body>
+</html>
