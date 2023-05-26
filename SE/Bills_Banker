@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Bills</title>
+  <style>
+    .bill-section {
+      float: left;
+      width: 33.33%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .bill-container {
+      width: 100%;
+    }
+
+    .bill-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    .gas-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	    .water-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+	    .electricity-pay-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Bills</h1>
+    <a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="BankerPage.html" id="home">Home</a></li>
+      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" id="client-account">Client's Account &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="Personalinfo_Banker.html">Personal Information</a></li>
+          <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+          <li><a href="Balance_Banker.html">Balance</a></li>
+          <li><a href="Complaints.html">Complaints</a></li>
+        </ul>
+      </li>
+	   <li><a href="Transfers_history.html">Transfer</a></li>
+	   <li><a href="Bills_Banker.html">Bills</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="bill-section">
+      <div class="bill-container">
+        <h2 class="bill-title">Gas Bills</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Bill ID</th>
+              <th>Address</th>
+              <th>Issue Date</th>
+              <th>Due Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>123456</td>
+              <td>Yasmine Sheikh Zayed</td>
+              <td>2023-05-01</td>
+              <td>2023-07-15</td>
+              <td>$100.00</td>
+            </tr>
+            <tr>
+              <td>789012</td>
+              <td>Obour</td>
+              <td>2023-05-01</td>
+              <td>2023-07-15</td>
+              <td>$85.50</td>
+            </tr>
+            <tr>
+              <td>345678</td>
+              <td>El Rehab</td>
+              <td>2023-04-01</td>
+              <td>2023-06-15</td>
+              <td>$120.75</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bill-section">
+      <div class="bill-container">
+        <h2 class="bill-title">Water Bills</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Bill ID</th>
+              <th>Address</th>
+              <th>Issue Date</th>
+              <th>Due Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>234567</td>
+              <td>El Rehab</td>
+              <td>2023-05-01</td>
+              <td>2023-05-15</td>
+              <td>$75.00</td>
+            </tr>
+            <tr>
+              <td>890123</td>
+              <td>Yasmine Sheikh Zayed</td>
+              <td>2023-05-09</td>
+              <td>2023-06-23</td>
+              <td>$92.25</td>
+            </tr>
+            <tr>
+              <td>456789</td>
+              <td>Obour</td>
+              <td>2023-05-03</td>
+              <td>2023-06-17</td>
+              <td>$110.50</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bill-section">
+      <div class="bill-container">
+        <h2 class="bill-title">Electricity Bills</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Bill ID</th>
+              <th>Address</th>
+              <th>Issue Date</th>
+              <th>Due Date</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>567890</td>
+              <td>Obour</td>
+              <td>2023-05-01</td>
+              <td>2023-05-15</td>
+              <td>$95.00</td>
+            </tr>
+            <tr>
+              <td>901234</td>
+              <td>El Rehab</td>
+              <td>2023-05-01</td>
+              <td>2023-08-15</td>
+              <td>$80.75</td>
+            </tr>
+            <tr>
+              <td>678901</td>
+              <td>Yasmine Sheikh Zayed</td>
+              <td>2023-05-01</td>
+              <td>2023-06-15</td>
+              <td>$115.25</td>
+            </tr>
+          </tbody>
+        </table>
+       
+</body>
+</html>
