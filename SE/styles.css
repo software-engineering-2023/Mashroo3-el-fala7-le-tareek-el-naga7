@@ -17,7 +17,7 @@ header {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0;
-    font-weight: lighter;
+    font-weight: lighter 100;
 }
 
 .menu {
