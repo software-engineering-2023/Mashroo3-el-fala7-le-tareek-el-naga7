@@ -40,9 +40,9 @@ header {
    font-weight:bold;
 }
 
-.menu li a:hover {
-  background-color: #d9d9d9;
-}
+    .menu li a:hover {
+        background-color: #f4f1de;
+    }
 /* Existing styles */
 
 /* Existing styles */
