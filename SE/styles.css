@@ -173,12 +173,12 @@ label {
 
 .banner {
     display: none;
-    background-color: #84a98c;
+    background-color: #e07a5f;
     border-top: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     position: fixed;
-    bottom: 70px; /* Adjust the value as needed */
+    bottom: 45px; /* Adjust the value as needed */
     left: 0;
     width: 100%;
 }
@@ -253,4 +253,5 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 25px;
 }
