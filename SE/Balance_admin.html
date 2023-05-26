@@ -1,87 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Balance</title>
-  <style>
-    body {
-      position: relative;
-    }
-	 
 
-    .left-side {
-      float: left;
-      width: 50%;
-      padding-right: 10px;
-      box-sizing: border-box;
-	  display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>Balance</title>
+    <style>
+        body {
+            position: relative;
+        }
 
-    .right-side {
-      float: right;
-      width: 50%;
-      padding-left: 10px;
-      box-sizing: border-box;
-    }
 
-    .savings-window {
-      width: 250px;
-      height: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #f2f2f2;
-      border: 2px solid black;
-      font-size: 60px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
+        .left-side {
+            float: left;
+            width: 50%;
+            padding-right: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .debit-card-table {
-      border-collapse: collapse;
-      width: 100%;
-      border: 2px solid black;
-      margin-bottom: 20px;
-    }
+        .right-side {
+            float: right;
+            width: 50%;
+            padding-left: 10px;
+            box-sizing: border-box;
+        }
 
-    .debit-card-table th,
-    .debit-card-table td {
-      border: 1px solid black;
-      padding: 8px;
-      text-align: left;
-    }
+        .savings-window {
+            width: 250px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            border: 2px solid black;
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-    .transaction-container {
-      margin-bottom: 20px;
-    }
+        .debit-card-table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid black;
+            margin-bottom: 20px;
+        }
 
-    .transaction-label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
+            .debit-card-table th,
+            .debit-card-table td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
 
-    .transaction-input {
-      width: 100px;
-      margin-bottom: 5px;
-    }
+        .transaction-container {
+            margin-bottom: 20px;
+        }
 
-    .transaction-button {
-      margin-top: 10px;
-    }
+        .transaction-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-    .sign-out-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-weight: bold;
-    }
-  </style>
+        .transaction-input {
+            width: 100px;
+            margin-bottom: 5px;
+        }
+
+        .transaction-button {
+            margin-top: 10px;
+        }
+
+        .sign-out-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
   <header>
