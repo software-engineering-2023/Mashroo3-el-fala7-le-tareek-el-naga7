@@ -27,7 +27,6 @@ header {
     padding: 10px 0;
     text-align: center;
     margin-top: 0;
-    font-weight: bold;
 }
 
 .menu li {
@@ -41,7 +40,6 @@ header {
         text-decoration: none;
         padding: 5px 10px;
         transition: background-color 0.3s ease;
-        font-weight: bold;
     }
 
 .menu li a:hover {
@@ -75,13 +73,13 @@ header {
   padding:5px;
 }
 
-.dropdown-menu li a {
-  color: #00529f;
-  text-decoration: none;
-  padding: 5px 10px;
-  display:block;
-   font-weight:bold;
-}
+    .dropdown-menu li a {
+        font-family: 'Roboto', sans-serif;
+        color: #00529f;
+        text-decoration: none;
+        padding: 5px 10px;
+        display: block;
+    }
 
 .dropdown-menu li a:hover {
   background-color: #e0e0e0;
@@ -130,9 +128,9 @@ section {
 }
 
 h2 {
-  color: #81b29a;
-  text-align: center;
-  font-weight:bold;
+    font-family: 'Roboto', sans-serif;
+    color: #81b29a;
+    text-align: center;
 }
 
 /* Form styles */
@@ -151,7 +149,6 @@ h2 {
 label {
     font-family: 'Roboto', sans-serif;
     width: 120px;
-    font-weight: bold;
 }
 .textbox {
     font-family: 'Roboto', sans-serif;
@@ -225,7 +222,6 @@ input[type="password"] {
     flex: 1;
     padding: 5px;
     font-size: 16px;
-    font-weight: bold;
     border-radius: 5px;
     border: 1px solid #cccccc;
 }
@@ -238,7 +234,6 @@ button {
     color: white;
     cursor: pointer;
     font-size: 18px;
-    font-weight: bold;
     border-radius: 5px;
 }
 
