@@ -72,7 +72,7 @@ header {
 }
 
 .dropdown-menu li a {
-  color: #00529f;;
+  color: #00529f;
   text-decoration: none;
   padding: 5px 10px;
   display:block;
@@ -104,14 +104,14 @@ header {
 }
 
 h1 {
-  color: white;
-  margin: 0;
-  text-align: center;
-  font-size: 60px; /* Adjust the font size as needed */
-  font-weight: bold;
-  flex: 1;
-  margin-left:-140px;
-  font-weight:bold;
+    color: #81b29a;
+    margin: 0;
+    text-align: center;
+    font-size: 60px; /* Adjust the font size as needed */
+    font-weight: bold;
+    flex: 1;
+    margin-left: -140px;
+    font-weight: bold;
 }
 
 /* Main section styles */
