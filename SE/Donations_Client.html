@@ -146,14 +146,35 @@
         <input type="text" id="cvv" placeholder="Enter CVV">
         <label for="donation-amount">Donation Amount:</label>
         <input type="number" id="donation-amount" placeholder="Enter donation amount">
-        <input type="submit" value="Donate">
+         <button class="donate">Donate</button>
       </form>
     </div>
     <div style="clear: both;"></div>
+	<div class="banner" id="don-banner">
+  <span class="banner-text" id="don-banner-text"></span>
+</div>
   </main>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
+   <script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  var don = document.querySelector('.Donate');
+ var amt = document.querySelector('#transaction-amount').value;
+  var banner = document.getElementById('don-banner');
+  var bannerText = document.getElementById('don-banner-text');
+
+  don.addEventListener('click', function() {
+      bannerText.textContent = 'Donating' + ;
+      banner.style.display = 'block';
+  });
+  
+  });
+
+
+
+</script>
 </body>
 </html>
