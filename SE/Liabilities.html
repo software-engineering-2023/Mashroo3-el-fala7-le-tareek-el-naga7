@@ -42,6 +42,38 @@
         .credit-card-button, .loan-button {
             margin-top: 10px;
         }
+		.hidden {
+      display: none;
+    }
+
+    .form-section {
+      margin-top: 10px;
+    }
+
+    .form-section label{
+      display: block;
+      margin-bottom: 10px;
+    }
+    .form-section input {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .form-section input[type="submit"] {
+      margin-top: 10px;
+    }
+	
+  .settle-credit-card,
+  .settle-loan {
+     position: fixed;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 400px;
+      margin-right: 100px;
+      display: none;
+  }
+
+
     </style>
 </head>
 <body>
@@ -100,8 +132,8 @@
           </tr>
         </tbody>
       </table>
-      <button class="credit-card-button">Apply for new Credit card</button>
-      <button class="credit-card-button">Settle part/all due amount</button>
+      <button class="apply-button" id="credit-card-button">Apply for new Credit card</button>
+      <button class="credit-card-button" id="settle1">Settle part/all due amount</button>
     </div>
     <div class="right-side">
       <h2>Loans</h2>
@@ -135,10 +167,78 @@
           </tr>
         </tbody>
       </table>
-      <button class="loan-button">Apply for new loan</button>
-      <button class="loan-button">Settle part/all due amount</button>
+      <button class="apply-button" id="loan-button">Apply for new loan</button>
+      <button class="loan-button" id="settle2">Settle part/all due amount</button>
     </div>
+	<div id="loan-form" class="form-section hidden">
+        <h2>Loan Application</h2>
+        <form id="loan-application-form">
+		 <label for="loan-type">Loan Type:</label>
+          <select id="loan-type" name="loan-type">
+            <option value="type1">Car loan</option>
+            <option value="type2">Personal loan</option>
+           
+          </select>
+          <label for="loan-plan">Loan Plan:</label>
+          <select id="loan-plan" name="loan-plan">
+            <option value="plan1">Loan Plan 1 (2% - 1 year)</option>
+            <option value="plan2">Loan Plan 2 (4% - 2 years)</option>
+            <option value="plan3">Loan Plan 3 (7% - 3 years)</option>
+          </select>
+          <label for="loan-amount">Loan Amount:</label>
+          <input type="text" id="loan-amount" name="loan-amount">
+          <label for="guarantee-account">Guaranteeing Account Number:</label>
+          <input type="text" id="guarantee-account" name="guarantee-account">
+          <label for="full-name">Full Name:</label>
+          <input type="text" id="full-name" name="full-name">
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div id="credit-card-form" class="form-section hidden">
+        <h2>Credit Card Application</h2>
+        <form id="credit-card-application-form">
+          <label for="card-limit">Card Limit:</label>
+          <input type="text" id="card-limit" name="card-limit">
+          <label for="guarantee-account-cc">Guaranteeing Account Number:</label>
+          <input type="text" id="guarantee-account-cc" name="guarantee-account-cc">
+          <label for="full-name-cc">Full Name:</label>
+          <input type="text" id="full-name-cc" name="full-name-cc">
+          <label for="over-limit">Allow Over Limit:</label>
+          <select id="over-limit" name="over-limit">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+	  <div class="settle-credit-card">
+  <h2>Settle Credit Card with Balance</h2>
+  <form id="settle-credit-card-form">
+    <label for="credit-card-number">Card Number:</label>
+    <input type="text" id="credit-card-number" name="credit-card-number">
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" name="cvv">
+    <label for="settle-amount">Settle Amount:</label>
+    <input type="text" id="settle-amount" name="settle-amount">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div class="settle-loan">
+  <h2>Settle Loan with Balance</h2>
+  <form id="settle-loan-form">
+    <label for="settle-loan-amount">Settle Amount:</label>
+    <input type="text" id="settle-loan-amount" name="settle-loan-amount">
+     <label for="loan-number">Loan Number:</label>
+    <input type="text" id="loan-number" name="loan-number">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
     <div style="clear: both;"></div>
+	<div class="banner" id="liab-banner">
+  <span class="banner-text" id="liab-banner-text"></span>
+</div>
   </main>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
@@ -147,6 +247,62 @@
 	
 	<script>
 
+ const loanButton = document.getElementById('loan-button');
+    const creditCardButton = document.getElementById('credit-card-button');
+    const loanForm = document.getElementById('loan-form');
+    const creditCardForm = document.getElementById('credit-card-form');
+ var banner = document.getElementById('liab-banner');
+  var bannerText = document.getElementById('liab-banner-text');
+    loanButton.addEventListener('click', () => {
+      loanForm.classList.remove('hidden');
+      creditCardForm.classList.add('hidden');
+    });
+
+    creditCardButton.addEventListener('click', () => {
+      creditCardForm.classList.remove('hidden');
+      loanForm.classList.add('hidden');
+    });
+ const loanApplicationForm = document.getElementById('loan-application-form');
+    const creditCardApplicationForm = document.getElementById('credit-card-application-form');
+
+    loanApplicationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Handle loan application form submission
+      const loanPlan = document.getElementById('loan-plan').value;
+      const loanAmount = document.getElementById('loan-amount').value;
+      const guaranteeAccount = document.getElementById('guarantee-account').value;
+      const fullName = document.getElementById('full-name').value;
+	   bannerText.textContent = 'Loan request sent';
+      banner.style.display = 'block';
+	   loanApplicationForm.reset();
+});
+creditCardApplicationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Handle credit card application form submission
+      const cardLimit = document.getElementById('card-limit').value;
+      const guaranteeAccountCC = document.getElementById('guarantee-account-cc').value;
+      const fullNameCC = document.getElementById('full-name-cc').value;
+      const overLimit = document.getElementById('over-limit').value;
+	   bannerText.textContent = 'Credit card request sent';
+      banner.style.display = 'block';
+	  creditCardApplicationForm.reset();
+});
+
+
+ const cardButton2 = document.getElementById('settle1');
+const loanButton2 = document.getElementById('settle2');
+const settleCreditCardForm = document.querySelector('.settle-credit-card');
+const settleLoanForm = document.querySelector('.settle-loan');
+
+cardButton2.addEventListener('click', () => {
+  settleCreditCardForm.style.display = 'block';
+  settleLoanForm.style.display = 'none';
+});
+
+loanButton2.addEventListener('click', () => {
+  settleCreditCardForm.style.display = 'none';
+  settleLoanForm.style.display = 'block';
+});
 
 
 </script>
