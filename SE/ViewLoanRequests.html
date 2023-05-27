@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>Personal Information</title>
+    <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<header>
+    <div class="logo">
+        <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Personal Information</h1>
+    <a href="Home.html" class="sign-out-button">Sign Out</a>
+</header>
+<nav>
+    <ul class="menu">
+        <li><a href="BankerPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+            <a href="#" id="client-account">Client's Account &#9662;</a>
+            <ul class="dropdown-menu">
+                <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
+                <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+                <li><a href="Balance_Banker.html">Balance</a></li>
+
+            </ul>
+        </li>
+        <li><a href="Transfer.html">Transfer</a></li>
+        <li><a href="Bills_Banker.html">Bills</a></li>
+        <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+    </ul>
+</nav>
+
+<body>
+<h1>Loan Requests</h1>
+
+
+<div class="left-side">
+
+<table>
+
+    <tr>
+        <th>Loan ID</th>
+        <th>Loan Amount</th>
+        <th>Loan Requester Name</th>
+        <th>National ID</th>
+        <th>Loan Request Date</th>
+        <th>Loan Requester Account Number</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>20000000</td>
+        <td>Naguib Saweeras</td>
+        <td>1902195736141</td>
+        <td>2023-02-19</td>
+        <td>1896155132</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>3700</td>
+        <td>Assem Sherif</td>
+        <td>18547559241</td>
+        <td>2023-02-17</td>
+        <td>1748526984</td>
+    <tr>
+    <td>3</td>
+    <td>52000</td>
+    <td>Balooza El Gen</td>
+    <td>1875321478</td>
+    <td>2023-09-13</td>
+    <td>1309200255</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>4000</td>
+        <td>Michael Brown</td>
+        <td>2468135790</td>
+        <td>2023-05-12</td>
+        <td>1357924680</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>2500</td>
+        <td>Emily Davis</td>
+        <td>7890123456</td>
+        <td>2023-05-15</td>
+        <td>2468013579</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>1800</td>
+        <td>James Wilson</td>
+        <td>1029384756</td>
+        <td>2023-05-18</td>
+        <td>9876543210</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>3500</td>
+        <td>Olivia Smith</td>
+        <td>5678901234</td>
+        <td>2023-05-20</td>
+        <td>1234567890</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>4200</td>
+        <td>Alexander Johnson</td>
+        <td>9876543210</td>
+        <td>2023-05-22</td>
+        <td>5432109876</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>19000</td>
+        <td>Ahmed Salama</td>
+        <td>81314551378</td>
+        <td>2023-02-14</td>
+        <td>1862498621</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>1500</td>
+        <td>Mia Thompson</td>
+        <td>1357924680</td>
+        <td>2023-05-25</td>
+        <td>7890123456</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>460000</td>
+        <td>Ahmed Mubarak</td>
+        <td>1309200256</td>
+        <td>2023-11-29</td>
+        <td>3178621698</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>500000</td>
+        <td>Yassin ElAref</td>
+        <td>1309200217</td>
+        <td>2023-12-19</td>
+        <td>8217861845</td>
+    </tr>
+
+
+</table>
+</div>
+<div class="buttons">
+    <button onclick="acceptLoan()">Accept Loan</button>
+    <button onclick="rejectLoan()">Reject Loan</button>
+</div>
+
+<div class="buttons">
+    <button onclick="acceptLoan()">Accept Loan</button>
+    <button onclick="rejectLoan()">Reject Loan</button>
+</div>
+
+<footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    function acceptLoan() {
+      alert('Loan accepted!');
+      // Add your logic here for accepting the loan
+    }
+
+    function rejectLoan() {
+      alert('Loan rejected!');
+      // Add your logic here for rejecting the loan
+    }
+  </script>
+</body>
+</html>
 
