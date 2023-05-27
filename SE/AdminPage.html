@@ -24,13 +24,13 @@
     }
     .right_side{
       float: right;
-        width: 50%;
-        padding-inline: 10px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+            width: 50%;
+            padding-right: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
     }
     .admin_menu{
         font-family: 'Roboto', sans-serif;
@@ -61,9 +61,6 @@
     }
     .admin_menu li.dropdown:hover .dropdown-menu {
       display: block;
-    }
-    .client_container{
-      visibility : hidden;
     }
     </style>
 </head>
@@ -104,6 +101,13 @@
         </div>
       </div>
     </div>
+    <div class="right_side">
+      <div class="buttons">
+        <label for="announce-input">Entering a System Announcement:</label>
+        <input type="text" id="announce-input" class="textbox" placeholder="place an announce">
+        <button class="announcement_button" >Submit an Announcement</button>
+      </div>
+    </div>
 
     <div style="clear: both;"></div>
 	<div class="banner" id="announce-banner">
@@ -114,6 +118,7 @@
 </footer>
 <script src="script.js"></script>
 <script>
+  document.addEventListener("DOMContentLoaded", function(){
     var userButton = document.querySelector('.UseridButton');
     userButton.addEventListener('click', function() {
       var user_id = document.getElementById('userid-input').value;
@@ -121,6 +126,22 @@
       document.getElementsByClassName('admin_menu')[0].style.visibility = "visible"; 
   });
 
+  // Add click event listener to the button
+ 
+})
+var announceButton = document.querySelector('.announcement_button');
+announceButton.addEventListener('click', function(){
+  var banner = document.getElementById('announce-banner');
+
+  // Get the banner text element
+  var bannerText = document.getElementById('announceInfo-banner-text');
+  var info = document.getElementById('announce-input').value;
+  // Set the banner text
+  bannerText.textContent = 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................'+ 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................' ;
+
+  // Show the banner
+  banner.style.display = 'block';
+});
   </script>
         </body>
 </html>

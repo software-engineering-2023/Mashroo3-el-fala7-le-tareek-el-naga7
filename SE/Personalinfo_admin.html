@@ -116,25 +116,68 @@
     <div class="right-side">
      
       <div class="buttons">
-        <button>Delete Account</button>
+        <button class="delete-button">Delete Account</button>
       </div>
       <div class="buttons">
-        <button>Edit Account</button>
+        <label for="update-input">edit:</label>
+        <input type="text" id="update-input" class="textbox" placeholder="edit">
+        <button class="update-button">Edit Account</button>
+        <select id="update_info" class="update-col">
+          <option value="Fist Name">First Name</option>
+          <option value="Last Name">Last Name</option>
+          <option value="Date of Birth">Date of Birth</option>
+          <option value="Nationality">Nationality</option>
+          <option value="Address">Address</option>
+          <option value="National ID">National ID</option>
+          <option value="User ID">User ID</option>
+        </select>
       </div>
       <div class="buttons">
         <button>Response to client's request</button>
       </div>
       <div class="buttons">
-        <label for="issue-input">Report Issue:</label>
-        <textarea id="issue-input" class="textbox" placeholder="Enter your resolution"></textarea>
+        <label for="response-input">Report Issue:</label>
+        <textarea id="response-input" class="textbox" placeholder="Enter your resolution"></textarea>
         <button class="ReportButton">Response to an issue</button>
       </div>
+      <div class="banner" id="info-banner" >
+        <span class="banner-text" id="info-banner-text"></span>
+      <div style="clear: both;"></div>
     </div>
-    <div style="clear: both;"></div>
   </main>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
-  </footer>  <script src="script.js"></script>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    // getting elements of specified class 
+    var deleteButton = document.querySelector('.delete-button');
+    deleteButton.addEventListener('click', function(){
+      alert("Client account is deleted, return to home page")
+      window.location.href = "AdminPage.html";
+    })
+    var addButton = document.querySelector('.update-button');
 
+    // Add click event listener to the button
+    addButton.addEventListener('click', function() {
+      var selected_record = document.querySelector('.update-col').value;
+
+     var newinfo = document.getElementById('update-input').value;
+
+      // Get the banner element
+      var banner = document.getElementById('info-banner');
+
+      // Get the banner text element
+      var bannerText = document.getElementById('info-banner-text');
+      
+      // Set the banner text
+      bannerText.textContent = selected_record + ' value will be updated to be  ' + newinfo+ ' shortly.' +"................................................. "+  selected_record + ' value will be updated to be ' + newinfo + ' shortly.';
+
+      // Show the banner
+      banner.style.display = 'block';
+    })
+  })
+</script>
 </body>
 </html>
