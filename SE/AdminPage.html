@@ -11,6 +11,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Admin Page</title>
+    <style>
+      .center_container{
+        float: center;
+        width: 50%;
+        padding-inline: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .right_side{
+      float: right;
+        width: 50%;
+        padding-inline: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .admin_menu{
+        font-family: 'Roboto', sans-serif;
+        background-color: #e07a5f;
+        padding: 10px 0;
+        text-align: center;
+        margin-top: 0;
+        visibility: hidden;
+    }
+    .admin_menu li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    
+        .admin_menu li a {
+            font-family: 'Roboto', sans-serif;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+    
+    .admin_menu li a:hover {
+      background-color: #d9d9d9;
+    }
+    .admin_menu li.dropdown {
+      position: relative;
+    }
+    .admin_menu li.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -24,7 +76,7 @@
         <a href="Home.html" class="sign-out-button">Sign Out</a>
     </header>
    <nav>
-      <ul class="menu">
+      <ul class="admin_menu">
         <li><a href="Home.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
         <li class="dropdown">
@@ -40,8 +92,32 @@
         	 <li><a href="Bills_admin.html">Bills</a></li>
         <li><a href="Transfers_history.html" id="transfers">Transfers</a></li>
       </ul>
-        <footer>
-            <p>&copy; 2023 ABG Bank. All rights reserved.</p>
-          </footer>
+   </nav>
+      <div class="center_container">
+        <div class="buttons">
+          <label for="userid-input">Entering id of Client:</label>
+          <input type="text" id="userid-input" class="textbox" placeholder="user_id">
+          <button class="UseridButton" >Go to client profile</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="clear: both;"></div>
+	<div class="banner" id="announce-banner">
+  <span class="banner-text" id="announceInfo-banner-text"></span>
+</div>
+<footer>
+  <p>&copy; 2023 ABG Bank. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+    var userButton = document.querySelector('.UseridButton');
+    userButton.addEventListener('click', function() {
+      var user_id = document.getElementById('userid-input').value;
+      alert('Gaining access of User id ' + user_id+ ' profile');
+      document.getElementsByClassName('admin_menu')[0].style.visibility = "visible"; 
+  });
+
+  </script>
         </body>
 </html>
