@@ -38,6 +38,7 @@
         padding: 10px 0;
         text-align: center;
         margin-top: 0;
+        visibility: hidden;
     }
     .admin_menu li {
       display: inline-block;
@@ -81,7 +82,6 @@
       <ul class="admin_menu">
         <li><a href="Home.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
-        <ul class = "client-container">
         <li class="dropdown">
           <a href="#" id="client's_account">Client's Account &#9662;</a>
           <ul class="dropdown-menu">
@@ -94,7 +94,6 @@
         <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
         	 <li><a href="Bills_admin.html">Bills</a></li>
         <li><a href="Transfers_history.html" id="transfers">Transfers</a></li>
-      </ul>
       </ul>
    </nav>
       <div class="center_container">
@@ -119,7 +118,7 @@
     userButton.addEventListener('click', function() {
       var user_id = document.getElementById('userid-input').value;
       alert('Gaining access of User with an id ' + user_id);
-      document.getElementsByClassName('client_container')[0].style.visibility = "visible"; 
+      document.getElementsByClassName('admin_menu')[0].style.visibility = "visible"; 
   });
 
   </script>
