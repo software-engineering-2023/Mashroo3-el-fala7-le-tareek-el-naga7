@@ -1,103 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Homes</title>
-  <style>
-    /* CSS styles here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Homes</title>
+    <style>
+        /* CSS styles here */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 60vh;
-      padding: 20px;
-    }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60vh;
+            padding: 20px;
+            padding-top: 40px;
+            
+        }
 
-    .message {
-      flex-basis: 50%;
-      padding-left:50px;
-      font-size: 20px;
-      font-style: italic;
-      font-family: 'Pacifico', cursive;
-      line-height: 1.5;
-	  padding-bottom:100px;
-    }
+        .message {
+            flex-basis: 50%;
+            padding-left: 50px;
+            font-size: 20px;
+            font-family: 'Roboto', cursive;
+            line-height: 1.5;
+            padding-bottom: 100px;
+        }
 
-    .logo {
-      flex-basis: 50%;
-      text-align: right;
-	  	  padding-bottom:50px;
-		  padding-right:50px;
+        .logo {
+            flex-basis: 50%;
+            text-align: right;
+            padding-bottom: 50px;
+            padding-right: 50px;
+        }
 
-    }
+            .logo img {
+                max-width: 600px;
+                height: auto;
+            }
 
-    .logo img {
-      max-width: 600px;
-      height: auto;
-    }
+        .btn-container {
+            text-align: center;
+            margin-top: -40px;
+        }
 
-    .btn-container {
-      text-align: center;
-      margin-top: 10px;
-	 
-    }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #e07a5f;
+            color: #f4f1de;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #e07a5f;
-      color: #f4f1de;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-	  	  
-	
+        .custom-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #e07a5f;
+            color: #f4f1de;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-    }
-	.custom-button{
-	 display: inline-block;
-      padding: 10px 20px;
-      font-size: 18px;
-      background-color: #e07a5f;
-      color: #f4f1de;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-	
-	}
-	
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        justify-content: center;
-        height: auto;
-      }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+            }
 
-      .message, .logo {
-        flex-basis: auto;
-      }
-    }
-	
-.logo2 {
-  margin-right: 10px;
-}
-zw
-.logo2 img {
-  max-width: 120px;
-  height: auto;
-  content: url("logo.png");
-}
-  </style>
+            .message, .logo {
+                flex-basis: auto;
+            }
+        }
+
+        .logo2 {
+            margin-right: 10px;
+        }
+
+        zw
+        .logo2 img {
+            max-width: 120px;
+            height: auto;
+            content: url("logo.png");
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -117,10 +122,10 @@ zw
   </nav>
   <div class="container">
     <div class="message">
-      <h2>Welcome to Our Website</h2>
+      <h2>Welcome to The ABG Website</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet nunc ac tellus posuere mollis. Mauris sagittis iaculis purus vel venenatis. Fusce consectetur lectus quis ligula lobortis, nec finibus nunc pulvinar. Phasellus sed nibh sapien. Etiam a lacus condimentum, commodo nulla in, accumsan libero. Sed vel ultrices leo. Nam ultrices tristique pharetra.</p>
       <p>Quisque nec ex eget lacus viverra tincidunt a id risus. Sed elementum iaculis ligula eget feugiat. Ut tristique felis nec eros dictum, id pellentesque enim pulvinar. Duis nec varius elit, vel congue nisl. Donec tincidunt orci et ante hendrerit rutrum.</p>
-      <p>Thank you for visiting our website. If you have any questions or need assistance, feel free to contact us.</p>
+      <p>Thank you for visiting the ABG website. If you have any questions or need assistance, feel free to contact customer support.</p>
     </div>
     <div class="logo">
       <img src="SE/logo.png" alt="Company Logo">
