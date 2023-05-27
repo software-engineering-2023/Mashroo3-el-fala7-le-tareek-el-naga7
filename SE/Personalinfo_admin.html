@@ -116,7 +116,7 @@
     <div class="right-side">
      
       <div class="buttons">
-        <button>Delete Account</button>
+        <button class="delete-button">Delete Account</button>
       </div>
       <div class="buttons">
         <button>Edit Account</button>
@@ -125,8 +125,8 @@
         <button>Response to client's request</button>
       </div>
       <div class="buttons">
-        <label for="issue-input">Report Issue:</label>
-        <textarea id="issue-input" class="textbox" placeholder="Enter your resolution"></textarea>
+        <label for="response-input">Report Issue:</label>
+        <textarea id="response-input" class="textbox" placeholder="Enter your resolution"></textarea>
         <button class="ReportButton">Response to an issue</button>
       </div>
     </div>
@@ -134,7 +134,17 @@
   </main>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
-  </footer>  <script src="script.js"></script>
-
+  </footer>  
+  <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    // getting elements of specified class 
+    var deleteButton = document.querySelector('.delete-button');
+    deleteButton.addEventListener('click', function(){
+      alert("Client account is deleted, return to home page")
+      window.location.href = "AdminPage.html";
+    })
+  })
+</script>
 </body>
 </html>
