@@ -75,63 +75,120 @@
 
       </ul>
     </nav>
-  <main>
-    <div class="left-side">
-      <h2>Personal Information</h2>
-      <table>
-        <tbody>
-          <tr>
-            <th>First Name</th>
-            <td>Omar</td>
-          </tr>
-          <tr>
-            <th>Last Name</th>
-            <td>El Seweidy</td>
-          </tr>
-          <tr>
-            <th>Date of Birth</th>
-            <td>4/3/2002</td>
-          </tr>
-          <tr>
-            <th>Nationality</th>
-            <td>Egyptian</td>
-          </tr>
-          <tr>
-            <th>Address</th>
-            <td>El Sheikh Zayed, Giza, Egypt</td>
-          </tr>
-          <tr>
-            <th>National ID</th>
-            <td>0203045739218527</td>
-          </tr>
-          <tr>
-            <th>User ID</th>
-            <td>1022174628</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-   <div class="right-side">
-  <div class="buttons">
-    <label for="address-input">New Address:</label>
-    <input type="text" id="address-input" class="textbox" placeholder="Enter new address">
-    <button class="AddressButton">Update Address</button>
+ <main>
+  <div class="left-side">
+    <h2>Personal Information</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            <div class="dropdown">
+              First Name &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for First Name dropdown -->
+                  <p>John</p>
+                  <p>Sarah</p>
+                  <p>Michael</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              Last Name &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for Last Name dropdown -->
+                  <p>Doe</p>
+                  <p>Smith</p>
+                  <p>Johnson</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              Date of Birth &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for Date of Birth dropdown -->
+                  <p>1985-01-01</p>
+                  <p>1990-05-15</p>
+                  <p>1978-11-30</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              Nationality &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for Nationality dropdown -->
+                  <p>Egyptian</p>
+                  <p>American</p>
+                  <p>British</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              Address &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for Address dropdown -->
+                  <p>Cairo, Egypt</p>
+                  <p>New York, USA</p>
+                  <p>London, UK</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              National ID &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for National ID dropdown -->
+                  <p>123456789</p>
+                  <p>987654321</p>
+                  <p>456789123</p>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th>
+            <div class="dropdown">
+              User ID &#9662;
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <!-- Dummy data for User ID dropdown -->
+                  <p>101</p>
+                  <p>202</p>
+                  <p>303</p>
+                </div>
+              </div>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <td>Omar</td>
+          <td>El Seweidy</td>
+          <td>4/3/2002</td>
+          <td>Egyptian</td>
+          <td>El Sheikh Zayed, Giza, Egypt</td>
+          <td>0203045739218527</td>
+          <td>1022174628</td>
+        </tr>
+        <!-- Repeat the data for other rows -->
+      </tbody>
+    </table>
   </div>
-  <div class="buttons">
-    <label for="issue-input">Report Issue:</label>
-    <textarea id="issue-input" class="textbox" placeholder="Enter your issue"></textarea>
-    <button class="ReportButton">Report Issue</button>
-  </div>
-  <div class="buttons">
-    <button class="RequestButton">Send Bank Statement Request</button>
-  </div>
-</div>
+  <!-- Rest of the code... -->
+</main>
 
-    <div style="clear: both;"></div>
-	<div class="banner" id="personalInfo-banner">
-  <span class="banner-text" id="personalInfo-banner-text"></span>
-</div>
-  </main>
   <footer>
     <p>&copy; 2023 ABGBank. All rights reserved.</p>
   </footer>  
