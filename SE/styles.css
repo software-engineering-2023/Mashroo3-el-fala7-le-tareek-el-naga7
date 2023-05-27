@@ -97,6 +97,16 @@ header {
   content: url("logo.png");
 }
 
+.logo2 {
+    margin-right: 10px;
+}
+
+    .logo2 img {
+        max-width: 120px;
+        height: auto;
+        content: url("logo.png");
+    }
+
 .portal-buttons {
   display: flex;
   justify-content: center;
