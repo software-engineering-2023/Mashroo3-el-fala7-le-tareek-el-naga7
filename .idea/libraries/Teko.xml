@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Teko">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/SE/Teko.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
