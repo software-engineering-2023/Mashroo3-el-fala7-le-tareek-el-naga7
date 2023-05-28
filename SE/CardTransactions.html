@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+   
+    <title>Bank Transactions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+		th{
+		background-color:#81b29a;
+		}
+		#card-selection {
+		width:200px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: linear-gradient(45deg, transparent 50%, #888 50%),
+                    linear-gradient(135deg, #888 50%, transparent 50%),
+                    linear-gradient(to right, #ccc, #ccc);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center, calc(100% - 6px) center, calc(100% - 2px) center;
+  background-size: 4px 4px, 4px 4px, 1px 80%;
+  cursor: pointer;
+}
+
+
+#card-selection option {
+  font-size: 16px;
+}
+        
+       
+    </style>
+</head>
+<body>
+ <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Card Transactions</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="ClientPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="my-account">My Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo.html">Personal Information</a></li>
+            <li><a href="Liabilities.html">Liabilities</a></li>
+            <li><a href="Balance.html">Balance</a></li>
+			
+          </ul>
+        </li>
+		
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="Bills.html">Bills</a></li>
+		   <li class="dropdown">
+          <a href="#" id="my-account">Transactions &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="ClientTransactions.html">View All Transactions</a></li>
+            <li><a href="CardTransactions.html">View Cards Transactions</a></li>
+            
+			
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+      </ul>
+    </nav>
+  <main>
+  <div class="credit-card-transactions">
+  <h2>Credit/Debit Card Transactions</h2>
+  <label for="card-selection">Select Card:</label>
+  <select id="card-selection">
+    <option value="">Choose a card</option>
+    <option value="Credit Card 1">Credit: ****4567</option>
+    <option value="Credit Card 2">Credit: ****2819</option>
+    <option value="Debit Card 1">Debit: ****5678</option>
+    <option value="Debit Card 2">Debit: ****1927</option>
+  </select>
+  <table id="transactions-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Transactions will be dynamically added here -->
+    </tbody>
+  </table>
+</div>
+
+    
+	</main>
+	<footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+    <script src="script.js"></script>
+	
+	<script>
+	
+	// Dummy data for credit card transactions
+const transactionsData = {
+  "Credit Card 1": [
+    { date: "2023-01-08", description: "Online Purchase at : 'Pull&Bear.de'", amount: "$100.00" },
+    { date: "2023-02-03", description: "ATM withdrawl", amount: "$50.00" },
+    { date: "2023-05-09", description: "POS at : 'TradelineStores'", amount: "$75.00" }
+  ],
+  "Credit Card 2": [
+    { date: "2023-05-02", description: "Online Purchase at : 'Emporio Armani'", amount: "$200.00" },
+    { date: "2023-05-12", description: "Online Purchase at : 'Zara'", amount: "$80.00" },
+    { date: "2023-05-16", description: "POS at : 'BOSS'", amount: "$120.00" }
+  ],
+  "Debit Card 1": [
+    { date: "2022-10-01", description: "ATM withdrawl", amount: "$60.00" },
+    { date: "2022-12-03", description: "Online Purchase at : 'Tod.tv'", amount: "$25.00" },
+    { date: "2023-01-05", description: "ATM withdrawl", amount: "$35.00" }
+  ],
+  "Debit Card 2": [
+    { date: "2023-03-02", description: "Online Purchase at : 'Snipes'", amount: "$90.00" },
+    { date: "2023-04-04", description: "Online Purchase at : 'NIKE'", amount: "$70.00" },
+    { date: "2023-04-29", description: "Online Purchase at : 'LCW'", amount: "$110.00" }
+  ]
+};
+
+// Function to populate the table with transactions
+function populateTransactionsTable(card) {
+  const tableBody = document.querySelector("#transactions-table tbody");
+  tableBody.innerHTML = "";
+
+  if (card in transactionsData) {
+    transactionsData[card].forEach(transaction => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${transaction.date}</td>
+        <td>${transaction.description}</td>
+        <td>${transaction.amount}</td>
+      `;
+      tableBody.appendChild(row);
+    });
+  }
+}
+
+// Event listener for card selection
+const cardSelection = document.querySelector("#card-selection");
+cardSelection.addEventListener("change", function() {
+  const selectedCard = cardSelection.value;
+  populateTransactionsTable(selectedCard);
+});
+
+	
+	</script>
+</body>
+</html>

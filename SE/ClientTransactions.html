@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+   
+    <title>Bank Transactions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+		th{
+		background-color:#81b29a;
+		}
+        
+       
+    </style>
+</head>
+<body>
+ <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Transactions</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="ClientPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="my-account">My Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo.html">Personal Information</a></li>
+            <li><a href="Liabilities.html">Liabilities</a></li>
+            <li><a href="Balance.html">Balance</a></li>
+			
+          </ul>
+        </li>
+		
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="Bills.html">Bills</a></li>
+		   <li class="dropdown">
+          <a href="#" id="my-account">Transactions &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="ClientTransactions.html">View All Transactions</a></li>
+            <li><a href="CardTransactions.html">View Cards Transactions</a></li>
+            
+			
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+      </ul>
+    </nav>
+  <main>
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Transaction To (Account No)</th>
+                <th>Payment Method</th>
+                <th>Card No/Transfer Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2023-05-01</td>
+                <td>Online Purchase</td>
+                <td>$50.00</td>
+                <td>123456789</td>
+                <td>Debit</td>
+                <td>1234 5678 9012 3456</td>
+            </tr>
+            <tr>
+                <td>2023-05-03</td>
+                <td>Deposit</td>
+                <td>$500.00</td>
+                <td>987654321</td>
+                <td>Credit</td>
+                <td>9876 5432 1098 7654</td>
+            </tr>
+            <tr>
+                <td>2023-05-05</td>
+                <td>ATM Withdrawal</td>
+                <td>$100.00</td>
+                <td>N/A</td>
+                <td>Debit</td>
+                <td>2345 6789 0123 4567</td>
+            </tr>
+            <tr>
+                <td>2023-05-07</td>
+                <td>Bill Payment</td>
+                <td>$80.00</td>
+                <td>555555555</td>
+                <td>Debit</td>
+                <td>3456 7890 1234 5678</td>
+            </tr>
+            <tr>
+                <td>2023-05-10</td>
+                <td>Transfer</td>
+                <td>$200.00</td>
+                <td>222222222</td>
+                <td>Transfer</td>
+                <td>International</td>
+            </tr>
+            <tr>
+                <td>2023-05-12</td>
+                <td>Online Purchase</td>
+                <td>$30.00</td>
+                <td>444444444</td>
+                <td>Credit</td>
+                <td>8765 4321 0123 4567</td>
+            </tr>
+			<tr>
+                <td>2023-05-13</td>
+                <td>Online Purchase</td>
+                <td>$29.00</td>
+                <td>926173829</td>
+                <td>Debit</td>
+                <td>3456 7890 1234 5678</td>
+            </tr>
+            <tr>
+                <td>2023-05-15</td>
+                <td>Transfer</td>
+                <td>$150.00</td>
+                <td>111111111</td>
+                <td>Transfer</td>
+                <td>Domestic</td>
+            </tr>
+			<tr>
+                <td>2023-05-19</td>
+                <td>Online Purchase</td>
+                <td>$120.00</td>
+                <td>888273619</td>
+                <td>Credit</td>
+                <td>8765 4321 0123 4567</td>
+            </tr>
+        </tbody>
+    </table>
+	</main>
+	<footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+    <script src="script.js"></script>
+	
+	
+</body>
+</html>

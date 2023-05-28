@@ -84,7 +84,7 @@
     <h1>Liabilities</h1>
 	<a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
-   <nav>
+  <nav>
       <ul class="menu">
         <li><a href="ClientPage.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
@@ -97,8 +97,18 @@
 			
           </ul>
         </li>
+		
 		 <li><a href="Transfer.html">Transfer</a></li>
 		  <li><a href="Bills.html">Bills</a></li>
+		   <li class="dropdown">
+          <a href="#" id="my-account">Transactions &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="ClientTransactions.html">View All Transactions</a></li>
+            <li><a href="CardTransactions.html">View Cards Transactions</a></li>
+            
+			
+          </ul>
+        </li>
 		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
 
       </ul>
@@ -303,6 +313,31 @@ loanButton2.addEventListener('click', () => {
   settleCreditCardForm.style.display = 'none';
   settleLoanForm.style.display = 'block';
 });
+const form = document.getElementById('settle-loan-form');
+
+settleLoanForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission for demonstration purposes
+
+  const amountInput = document.getElementById('settle-loan-amount');
+  const loanNumberInput = document.getElementById('loan-number');
+
+  const amount3 = amountInput.value.trim();
+  const loanNumber = loanNumberInput.value.trim();
+
+  if (amount3 === '' || loanNumber === '') {
+    bannerText.textContent = 'Please fill all the fields!';
+      banner.style.display = 'block';
+  }
+  else{
+   bannerText.textContent = 'Loan'+loanNumber+" settled for "+amount3;
+      banner.style.display = 'block';
+  
+  
+  }
+
+  
+});
+
 
 
 </script>
