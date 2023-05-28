@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>Personal Information</title>
+    <style>
+        .left-side {
+            float: left;
+            width: 50%;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .right-side {
+            float: right;
+            width: 50%;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th:first-child {
+            color: blue;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    footer {     font-family: 'Roboto', sans-serif;     background-color: #81b29a;     padding: 10px;     text-align: center;     color: white;     position: absolute ;     bottom: 0%;     left: 0;     width: 99%;     height: 35px;  }
+	</style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Personal Information</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="BankerPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="my-account">My Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
+            <li><a href="LiabilitiesBanker.html">Liabilities</a></li>
+            <li><a href="BalanceBanker.html">Balance</a></li>
+			
+          </ul>
+        </li>
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="BillsBanker.html">Bills</a></li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+      </ul>
+    </nav>
+  <main>
+    <div class="left-side">
+      <h2>Personal Information</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>First Name</th>
+            <td>John</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>Doe</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>1/1/1990</td>
+          </tr>
+          <tr>
+            <th>Nationality</th>
+            <td>United States</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>123 Main Street, Anytown, USA</td>
+          </tr>
+          <tr>
+            <th>National ID</th>
+            <td>1234567890</td>
+          </tr>
+          <tr>
+            <th>User ID</th>
+            <td>john.doe123</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   <div class="right-side">
+  <div class="buttons">
+    <input type="text" id="address-input" class="textbox" placeholder="Enter new address">
+    <button class="AddressButton">Update Address</button>
+    <input type="text" id="user-id-input" class="textbox" placeholder="Enter User ID">
+    <button type="button" class="close-account-button">Close Account</button>
+
+	   </div>
+    <div style="clear: both;"></div>
+	<div class="banner" id="personalInfo-banner">
+  <span class="banner-text" id="personalInfo-banner-text"></span>
+</div>
+   </div>
+  </main>
+  <footer>  
+	  <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function(){
+  // getting elements of specified class 
+  var AddressButton = document.querySelector('.AddressButton');
+  var banner = document.getElementById('personalInfo-banner');
+  var bannerText = document.getElementById('personalInfo-banner-text');
+
+  AddressButton.addEventListener('click', function() {
+    
+      var add = document.querySelector('#address-input').value;
+     
+
+      bannerText.textContent = 'New Address: ' + add + ' Will be added shortly';
+      banner.style.display = 'block';
+   
+      
+   
+  });
+  });
+  });
+
+
+
+</script>
+</body>
+</html>
