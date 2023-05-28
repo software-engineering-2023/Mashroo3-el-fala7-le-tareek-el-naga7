@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>Personal Information</title>
+    <style>
+        .left-side {
+            float: left;
+            width: 50%;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+        .right-side {
+            float: right;
+            width: 50%;
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th:first-child {
+            color: blue;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Personal Information</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="ClientPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="my-account">My Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo.html">Personal Information</a></li>
+            <li><a href="Liabilities.html">Liabilities</a></li>
+            <li><a href="Balance.html">Balance</a></li>
+			
+          </ul>
+        </li>
+		 <li><a href="Transfer.html">Transfer</a></li>
+		  <li><a href="Bills.html">Bills</a></li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+
+      </ul>
+    </nav>
+  <main>
+    <div class="left-side">
+      <h2>Personal Information</h2>
+      <table>
+        <tbody>
+          <tr>
+            <th>First Name</th>
+            <td>Omar</td>
+          </tr>
+          <tr>
+            <th>Last Name</th>
+            <td>El Seweidy</td>
+          </tr>
+          <tr>
+            <th>Date of Birth</th>
+            <td>4/3/2002</td>
+          </tr>
+          <tr>
+            <th>Nationality</th>
+            <td>Egyptian</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>El Sheikh Zayed, Giza, Egypt</td>
+          </tr>
+          <tr>
+            <th>National ID</th>
+            <td>0203045739218527</td>
+          </tr>
+          <tr>
+            <th>User ID</th>
+            <td>1022174628</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   <div class="right-side">
+  <div class="buttons">
+    <label for="address-input">New Address:</label>
+    <input type="text" id="address-input" class="textbox" placeholder="Enter new address">
+    <button class="AddressButton">Update Address</button>
+  </div>
+  <div class="buttons">
+    <label for="issue-input">Report Issue:</label>
+    <textarea id="issue-input" class="textbox" placeholder="Enter your issue"></textarea>
+    <button class="ReportButton">Report Issue</button>
+  </div>
+  <div class="buttons">
+    <button class="RequestButton">Send Bank Statement Request</button>
+  </div>
+</div>
+
+    <div style="clear: both;"></div>
+	<div class="banner" id="personalInfo-banner">
+  <span class="banner-text" id="personalInfo-banner-text"></span>
+</div>
+  </main>
+  <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function(){
+  // getting elements of specified class 
+  var AddressButton = document.querySelector('.AddressButton');
+  var RequestButton = document.querySelector('.RequestButton');
+  var ReportButton = document.querySelector('.ReportButton');
+  var banner = document.getElementById('personalInfo-banner');
+  var bannerText = document.getElementById('personalInfo-banner-text');
+
+  AddressButton.addEventListener('click', function() {
+    
+      var add = document.querySelector('#address-input').value;
+     
+
+      bannerText.textContent = 'New Address: ' + add + ' Will be added shortly';
+      banner.style.display = 'block';
+   
+      
+   
+  });
+   ReportButton.addEventListener('click', function() {
+    
+       var issue = document.querySelector('#issue-input').value;
+     
+
+      bannerText.textContent = 'Issue: ' + issue + 'Will be sent!';
+      banner.style.display = 'block';
+   
+  });
+  RequestButton.addEventListener('click', function() {
+   bannerText.textContent = 'Your bank statement will be sent to you shortly!';
+      banner.style.display = 'block';
+  
+  });
+  });
+
+
+
+</script>
+</body>
+</html>
