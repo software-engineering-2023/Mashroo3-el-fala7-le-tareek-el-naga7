@@ -24,7 +24,7 @@
     }
     .right_side{
       float: right;
-            width: 50%;
+            width: 150%;
             padding-right: 10px;
             box-sizing: border-box;
             display: flex;
@@ -32,36 +32,72 @@
             justify-content: center;
             align-items: center;
     }
-    .admin_menu{
-        font-family: 'Roboto', sans-serif;
-        background-color: #e07a5f;
-        padding: 10px 0;
-        text-align: center;
-        margin-top: 0;
-        visibility: hidden;
-    }
-    .admin_menu li {
-      display: inline-block;
-      margin: 0 10px;
-    }
+    .admin-menu {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e07a5f;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 0;
+  }
+  
+  .admin-menu li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+      .admin-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          text-decoration: none;
+          padding: 5px 10px;
+          transition: background-color 0.3s ease;
+      }
+  
+  .admin-menu li a:hover {
+    background-color: #d9d9d9;
+  }
+  /* Existing styles */
+  
+  /* Existing styles */
+  
+  .admin-menu li.dropdown {
+    position: relative;
+  }
+  
+  .admin-dropdown-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: #777777;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 999; /* Adjust the z-index value as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-menu li.dropdown:hover .admin-dropdown-menu {
+    display: block;
+  }
+  
+  .admin-dropdown-menu li {
+    margin-bottom: 5px;
+    padding:5px;
+  }
+  
+      .admin-dropdown-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: #00529f;
+          text-decoration: none;
+          padding: 5px 10px;
+          display: block;
+      }
+  
+  .admin-dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+  }
+  
     
-        .admin_menu li a {
-            font-family: 'Roboto', sans-serif;
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: background-color 0.3s ease;
-        }
-    
-    .admin_menu li a:hover {
-      background-color: #d9d9d9;
-    }
-    .admin_menu li.dropdown {
-      position: relative;
-    }
-    .admin_menu li.dropdown:hover .dropdown-menu {
-      display: block;
-    }
     </style>
 </head>
 <body>
@@ -76,12 +112,12 @@
         <a href="Home.html" class="sign-out-button">Sign Out</a>
     </header>
    <nav>
-      <ul class="admin_menu">
+      <ul  class="admin-menu">
         <li><a href="Home.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
-        <li class="dropdown">
+        <li class="dropdown" >
           <a href="#" id="client's_account">Client's Account &#9662;</a>
-          <ul class="dropdown-menu">
+          <ul class="admin-dropdown-menu" >
             <li><a href="Personalinfo_admin.html">Personal Information</a></li>
             <li><a href="Liabilities_admin.html">Liabilities</a></li>
             <li><a href="Balance_admin.html">Balance</a></li>
@@ -123,7 +159,8 @@
     userButton.addEventListener('click', function() {
       var user_id = document.getElementById('userid-input').value;
       alert('Gaining access of User with an id ' + user_id);
-      document.getElementsByClassName('admin_menu')[0].style.visibility = "visible"; 
+       document.getElementsByClassName('admin-dropdown-menu')[0].style.visibility = "visible"; 
+   
   });
 
   // Add click event listener to the button
