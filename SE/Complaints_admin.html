@@ -150,16 +150,19 @@ document.addEventListener("DOMContentLoaded", function() {
       var add1 = document.getElementById('response-input1').value;
       alert('Response '+ add1 + ' Will be added shortly');  
       document.getElementById('status1').innerHTML = "Response recorded";
+      responseButton1.disabled = true;
   });
    responseButton2.addEventListener('click', function() {
     var add2 = document.getElementById('response-input2').value;
       alert('Response '+ add2 + ' Will be added shortly');  
       document.getElementById('status2').innerHTML = "Response recorded";
+      responseButton2.disabled = true;
   });
   responseButton3.addEventListener('click',function() {
     var add3 = document.getElementById('response-input3').value;
       alert('Response '+ add3 + ' Will be added shortly');  
       document.getElementById('status3').innerHTML = "Response recorded";
+      responseButton3.disabled = true;
   });
   });
   
