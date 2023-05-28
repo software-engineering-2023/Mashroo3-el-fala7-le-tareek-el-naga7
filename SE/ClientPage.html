@@ -11,6 +11,106 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Client Page</title>
+	<style>
+	
+	main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reminders-window,
+.notifications-window {
+  width: 300px;
+  padding: 20px;
+  
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Sample images */
+.reminders-window:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 180px;
+   
+  background-image: url('rem.png');
+   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  margin-bottom: 16px;
+ 
+}
+
+.notifications-window:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 180px;
+  background-image: url('notif.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+	#reminder-dropdown {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  background-image: linear-gradient(45deg, transparent 50%, #888 50%),
+                    linear-gradient(135deg, #888 50%, transparent 50%),
+                    linear-gradient(to right, #ccc, #ccc);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center, calc(100% - 6px) center, calc(100% - 2px) center;
+  background-size: 4px 4px, 4px 4px, 1px 80%;
+  cursor: pointer;
+}
+
+#reminder-dropdown option {
+  font-size: 16px;
+}
+
+#mark-completed-button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: #81b29a;
+  color: #fff;
+  cursor: pointer;
+}
+
+	
+	
+	</style>
 </head>
 <body>
   <header>
@@ -50,8 +150,31 @@
       </ul>
     </nav>
   <main>
-    <!-- Your content goes here -->
-  </main>
+  <div class="reminders-window">
+    <h2>Reminders</h2>
+	
+    <ul>
+      <li>1.Gas bill due 2023-07-15</li>
+      <li>2.Remember to settle the Credit card due amount</li>
+      <li>3.Water bill due 2023-06-14</li>
+    </ul>
+	 <select id="reminder-dropdown">
+      <option value="Reminder 1">Reminder 1</option>
+      <option value="Reminder 2">Reminder 2</option>
+      <option value="Reminder 3">Reminder 3</option>
+    </select>
+    <button id="mark-completed-button">Mark as Completed</button>
+  </div>
+  <div class="notifications-window">
+    <h2>Notifications</h2>
+    <ul>
+      <li>New Announcement: "Security Alert: Phishing Scam Warning"</li>
+      <li>Your issue #173628 has been resolved</li>
+      <li>New Announcement: "Important Notice: Scheduled Manitenance"</li>
+    </ul>
+  </div>
+</main>
+
   <footer>
     <p>&copy; 2023 ABG Bank. All rights reserved.</p>
   </footer>

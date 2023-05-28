@@ -17,10 +17,14 @@
             width: 33.33%;
             padding: 20px;
             box-sizing: border-box;
+			margin-bottom:20px;
+			margin-top: -60px;
+			
         }
 
         .bill-container {
             width: 100%;
+			;
         }
 
         .bill-title {
@@ -42,6 +46,7 @@
 
         input[type="text"],
         input[type="number"] {
+		padding-top:10px;
             width: 100%;
             padding: 5px;
             margin-bottom: 10px;
@@ -50,7 +55,7 @@
         .gas-pay-button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #52796f;
             color: white;
             font-weight: bold;
             border: none;
@@ -60,7 +65,7 @@
         .water-pay-button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #52796f;
             color: white;
             font-weight: bold;
             border: none;
@@ -70,12 +75,62 @@
         .electricity-pay-button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #52796f;
             color: white;
             font-weight: bold;
             border: none;
             cursor: pointer;
         }
+		.telephone-pay-button{
+		width: 100%;
+            padding: 10px;
+            background-color: #52796f;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+		
+		
+		}
+		
+		.reminder-section {
+    position: fixed;
+    bottom: 90px;
+    right: 50px;
+    width: 300px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .reminder-section h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  #reminder-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #reminder-form label {
+    margin-bottom: 5px;
+  }
+
+  #reminder-form input[type="text"] {
+    margin-bottom: 10px;
+  }
+
+  .set-reminder-button {
+    padding: 10px;
+    background-color: #52796f;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
     </style>
 </head>
 <body>
@@ -242,6 +297,51 @@
         <button class="electricity-pay-button">Pay</button>
       </div>
     </div>
+	<div class="bill-section">
+  <div class="bill-container">
+    <h2 class="bill-title">Telephone Bills</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Bill ID</th>
+          <th>Address</th>
+          <th>Issue Date</th>
+          <th>Due Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>123123</td>
+          <td>Obour</td>
+          <td>2023-05-01</td>
+          <td>2023-06-15</td>
+          <td>$65.00</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+    <input type="text" id="telephone-bill-id" placeholder="Enter bill ID">
+    <input type="number" id="telephone-amount" placeholder="Enter payment amount">
+    <button class="telephone-pay-button">Pay</button>
+  </div>
+</div>
+<div class="reminder-section">
+    <h2 class="bill-title">Set Bill Reminder</h2>
+    <form id="reminder-form">
+      <label for="bill-type">Select Bill Type:</label>
+      <select id="bill-type" name="bill-type">
+        <option value="gas">Gas</option>
+        <option value="water">Water</option>
+        <option value="electricity">Electricity</option>
+        <option value="telephone">Telephone</option>
+      </select>
+
+      <input type="text" id="bill-number" placeholder="Enter bill number">
+      <button type="submit" class="set-reminder-button">Set Reminder</button>
+    </form>
+  </div>
+
 	<div class="banner" id="bills-banner">
   <span class="banner-text" id="bills-banner-text"></span>
 </div>
@@ -257,11 +357,16 @@ document.addEventListener("DOMContentLoaded", function() {
   var elec = document.querySelector('.electricity-pay-button');
   var water = document.querySelector('.water-pay-button');
   var gas = document.querySelector('.gas-pay-button');
+  var tele = document.querySelector('.telephone-pay-button');
   var banner = document.getElementById('bills-banner');
   var bannerText = document.getElementById('bills-banner-text');
 
   elec.addEventListener('click', function() {
       bannerText.textContent = 'Electricity bill payment will be made';
+      banner.style.display = 'block';
+  });
+    tele.addEventListener('click', function() {
+      bannerText.textContent = 'Telephone bill payment will be made';
       banner.style.display = 'block';
   });
    water.addEventListener('click', function() {
@@ -272,6 +377,25 @@ document.addEventListener("DOMContentLoaded", function() {
    bannerText.textContent = 'Gas bill payment will be made';
       banner.style.display = 'block';
   });
+  });
+  
+    document.addEventListener("DOMContentLoaded", function() {
+    var reminderForm = document.getElementById('reminder-form');
+    var reminderBanner = document.getElementById('bills-banner');
+    var reminderBannerText = document.getElementById('bills-banner-text');
+
+    reminderForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      var billType = document.getElementById('bill-type').value;
+      var billNumber = document.getElementById('bill-number').value;
+
+      reminderBannerText.textContent = 'Reminder will be set for ' + billType + ' bill with number ' + billNumber;
+      reminderBanner.style.display = 'block';
+
+      // Clear form inputs
+      reminderForm.reset();
+    });
   });
 
 

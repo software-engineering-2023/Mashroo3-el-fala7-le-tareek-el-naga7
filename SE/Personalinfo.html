@@ -48,6 +48,54 @@
         .buttons {
             margin-top: 10px;
         }
+		 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+           
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+		.button2 {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+        }
+
+        .button2 button {
+            padding: 10px 20px;
+            background-color: #52796f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button2 button:hover {
+            background-color: #45a049;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+		
     </style>
 </head>
 <body>
@@ -137,6 +185,11 @@
   <div class="buttons">
     <button class="RequestButton">Send Bank Statement Request</button>
   </div>
+  <div class="button2">
+   <label for="acc-input">Close Account:</label>
+    <input type="text" id="acc-input" class="textbox" placeholder="Password">
+    <button class="CloseButton">Close Account</button>
+  </div>
 </div>
 
     <div style="clear: both;"></div>
@@ -155,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var AddressButton = document.querySelector('.AddressButton');
   var RequestButton = document.querySelector('.RequestButton');
   var ReportButton = document.querySelector('.ReportButton');
+  var CloseButton = document.querySelector('.CloseButton');
   var banner = document.getElementById('personalInfo-banner');
   var bannerText = document.getElementById('personalInfo-banner-text');
 
@@ -182,6 +236,18 @@ document.addEventListener("DOMContentLoaded", function(){
    bannerText.textContent = 'Your bank statement will be sent to you shortly!';
       banner.style.display = 'block';
   
+  });
+  CloseButton.addEventListener('click', function() {
+    var password = document.querySelector('#acc-input').value;
+    if (password === 'Client123') {
+       bannerText.textContent = 'Your Close account request has been sent!';
+      banner.style.display = 'block';
+    }
+	else{
+	bannerText.textContent = 'Wrong Password!!!';
+      banner.style.display = 'block';
+	
+	}
   });
   });
 
