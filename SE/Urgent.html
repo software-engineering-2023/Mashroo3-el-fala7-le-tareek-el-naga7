@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+
+  <title>Urgent</title>
+  <style>
+     main {
+         padding: 20px;
+      }
+
+	main h1{
+	
+	margin-top:-30px;
+	
+	}
+      h2 {
+         font-family: 'Teko', sans-serif;
+         font-size: 24px;
+         margin-bottom: 20px;
+      }
+
+      form {
+         margin-bottom: 20px;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      select {
+         width: 100%;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-size: 16px;
+         margin-bottom: 10px;
+      }
+
+      button[type="submit"] {
+         background-color: #333;
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+         font-size: 16px;
+         cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+         background-color: #555;
+      }
+
+      #notification,
+      #replacement-section {
+         display: none;
+         margin-top: 20px;
+      }
+
+      #notification p {
+         margin: 0;
+         padding: 10px;
+         background-color: #f5f5f5;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+      }
+	   .custom-select {
+         position: relative;
+         width: 100%;
+         height: 40px;
+         overflow: hidden;
+         background-color: #fff;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         margin-bottom: 10px;
+      }
+
+      .custom-select::after {
+         content: '';
+         position: absolute;
+         top: 50%;
+         right: 10px;
+         width: 0;
+         height: 0;
+         border-left: 5px solid transparent;
+         border-right: 5px solid transparent;
+         border-top: 5px solid #555;
+         transform: translateY(-50%);
+      }
+
+      .custom-select select {
+         width: 100%;
+         height: 100%;
+         padding: 10px;
+         border: none;
+         outline: none;
+         background-color: transparent;
+         font-size: 16px;
+         appearance: none;
+         -webkit-appearance: none;
+      }
+	  select {
+         width: 100%;
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-size: 16px;
+         margin-bottom: 10px;
+         appearance: none;  /* Remove default arrow icon in Chrome/Safari */
+         -webkit-appearance: none;  /* Remove default arrow icon in Firefox */
+         background-color: #fff;
+         background-image: linear-gradient(45deg, transparent 50%, #555 50%),
+                           linear-gradient(135deg, #555 50%, transparent 50%);
+         background-position: calc(100% - 12px) center, calc(100% - 8px) center;
+         background-size: 8px 8px, 12px 12px;
+         background-repeat: no-repeat;
+      }
+
+      select:hover {
+         border-color: #555;
+      }
+
+      /* Styling for options */
+      select option {
+         background-color: #fff;
+         color: #333;
+      }
+	  #replacement-section {
+         margin-top: -20px;
+      }
+	  #card-form{
+	  
+	  margin-top:-50px;
+	  
+	  }
+
+      select option:hover {
+         background-color: #555;
+         color: #fff;
+      }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Report/Replace Card</h1>
+    <a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+  <nav>
+    <ul class="menu">
+      <li><a href="ClientPage.html" id="home">Home</a></li>
+      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+      <li class="dropdown">
+        <a href="#" id="my-account">My Account &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="Personalinfo.html">Personal Information</a></li>
+          <li><a href="Liabilities.html">Liabilities</a></li>
+          <li><a href="Balance.html">Balance</a></li>
+        </ul>
+      </li>
+      <li><a href="Transfer.html">Transfer</a></li>
+      <li><a href="Bills.html">Bills</a></li>
+      <li class="dropdown">
+        <a href="#" id="my-account">Transactions &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="ClientTransactions.html">View All Transactions</a></li>
+          <li><a href="CardTransactions.html">View Cards Transactions</a></li>
+        </ul>
+      </li>
+	  <li><a href="CreditCardPoints.html">My Points</a></li>
+      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+	   <li><a href="Urgent.html" id="urgent">Urgent</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Report Lost, Stolen, or Damaged Card</h2>
+    <form id="card-form">
+      <label for="card-type">Select Card Type:</label>
+      <select id="card-type">
+	  <option value="credit">Select Type</option>
+        <option value="credit">Credit Card</option>
+        <option value="debit">Debit Card</option>
+      </select>
+	         <label for="card-number">Card Number:</label>
+         <div id="card-number-wrapper" class="custom-select">
+            <select id="card-number" disabled>
+               <option value="">Select Card Type First</option>
+            </select>
+         </div>
+		 <label for="reason">Reason:</label>
+      <select id="reason">
+        <option value="lost">Lost</option>
+        <option value="stolen">Stolen</option>
+        <option value="damaged">Damaged</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="notification" style="display: none;">
+      <p id="notification-text"></p>
+    </div>
+
+    <div id="replacement-section" style="display: none;">
+      <h2>Apply for Card Replacement</h2>
+      <form id="replacement-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <label for="address">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address" required>
+        <button type="submit">Apply for Replacement</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 GUCBank. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var cardForm = document.getElementById("card-form");
+         var cardTypeSelect = document.getElementById("card-type");
+         var cardNumberWrapper = document.getElementById("card-number-wrapper");
+         var cardNumberSelect = document.getElementById("card-number");
+         var reasonSelect = document.getElementById("reason");
+         var notification = document.getElementById("notification");
+         var notificationText = document.getElementById("notification-text");
+         var replacementSection = document.getElementById("replacement-section");
+         var replacementForm = document.getElementById("replacement-form");
+
+cardNumberSelect.disabled = true;
+
+ cardTypeSelect.addEventListener("change", function() {
+            var cardType = cardTypeSelect.value;
+            cardNumberSelect.innerHTML = ""; // Clear previous options
+
+            if (cardType === "debit") {
+               var debitOptions = ["****3837", "****6547", "****9178"];
+               addOptionsToSelect(cardNumberSelect, debitOptions);
+            } else if (cardType === "credit") {
+               var creditOptions = ["****2910", "****2734", "****1727"];
+               addOptionsToSelect(cardNumberSelect, creditOptions);
+            }
+
+            cardNumberSelect.disabled = false;
+         });
+      cardForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var cardType = document.getElementById("card-type").value;
+        var cardNumber = document.getElementById("card-number").value;
+        var reason = document.getElementById("reason").value;
+
+        // Simulating card freezing process
+        // Replace this with your own logic to freeze the card
+        // and send appropriate notifications to the user or backend systems
+        setTimeout(function() {
+          notificationText.textContent = "Your " + cardType + " card with number " + cardNumber + " has been frozen due to " + reason + ".";
+          notification.style.display = "block";
+          replacementSection.style.display = "block";
+        }, 1000);
+      });
+
+      replacementForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var address = document.getElementById("address").value;
+
+        // Simulating card replacement application process
+        // Replace this with your own logic to handle card replacement requests
+        // and send appropriate notifications to the user or backend systems
+       notificationText.textContent = "Your replacement request has been submitted";
+          notification.style.display = "block";
+      });
+	   function addOptionsToSelect(select, options) {
+            options.forEach(function(option) {
+               var optionElement = document.createElement("option");
+               optionElement.value = option;
+               optionElement.textContent = option;
+               select.appendChild(optionElement);
+            });
+         }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
