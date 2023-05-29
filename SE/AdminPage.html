@@ -200,8 +200,13 @@ announceButton.addEventListener('click', function(){
   // Get the banner text element
   var bannerText = document.getElementById('announceInfo-banner-text');
   var info = document.getElementById('announce-input').value;
+  if(info==""){
+    bannerText.textContent = 'Cannot announce an empty message';
+  }else{
+    bannerText.textContent = 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................'+ 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................' ;
+  }
   // Set the banner text
-  bannerText.textContent = 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................'+ 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................' ;
+  
 
   // Show the banner
   banner.style.display = 'block';
