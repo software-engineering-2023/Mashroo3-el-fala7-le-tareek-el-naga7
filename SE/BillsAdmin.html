@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Bills</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    .admin-menu {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e07a5f;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 0;
+  }
+  
+  .admin-menu li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+      .admin-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          text-decoration: none;
+          padding: 5px 10px;
+          transition: background-color 0.3s ease;
+      }
+  
+  .admin-menu li a:hover {
+    background-color: #d9d9d9;
+  }
+  /* Existing styles */
+  
+  /* Existing styles */
+  
+  .admin-menu li.dropdown {
+    position: relative;
+  }
+  
+  .admin-dropdown-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: #777777;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 999; /* Adjust the z-index value as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-menu li.dropdown:hover .admin-dropdown-menu {
+    display: block;
+  }
+  
+  .admin-dropdown-menu li {
+    margin-bottom: 5px;
+    padding:5px;
+  }
+  
+      .admin-dropdown-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: #00529f;
+          text-decoration: none;
+          padding: 5px 10px;
+          display: block;
+      }
+  
+  .admin-dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+  }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Bill</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+    <ul  class="menu">
+        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li class="dropdown" >
+          <a href="#" id="client's_account">Client's Account &#9662;</a>
+          <ul class="dropdown-menu" >
+            <li><a href="Personalinfo_admin.html">Personal Information</a></li>
+            <li><a href="Liabilities_admin.html">Liabilities</a></li>
+            <li><a href="Balance_admin.html">Balance</a></li>
+            <li><a href="AdminTransactions.html">Transactions</a></li>
+            <li><a href="BillsAdmin.html">bill admin</a></li>
+          </ul>
+        </li>
+        <li><a href="AnouncementsAdmin.html" id="anouncments">Announcements</a></li>
+           <li><a href="Complaints_admin.html">Complaints</a></li>
+           <li><a href="Close-requests.html">Request accounts close</a></li>
+           <li><a href="Open_request.html">Request accounts open</a></li>
+           <li><a href="Reminders.html">Reminders</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>Bill</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Bill ID</th>
+          <th>bill type</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1223</td>
+          <td>132</td>
+          <td>telephone</td>
+          <td id = "status1">paid</td>
+          <td>
+            <button class="remind_button1" >Save in system</button>
+          </td>
+        </tr>
+        <tr>
+          <td>1213</td>
+          <td>122</td>
+          <td>gas</td>
+          <td id = "status2">paid</td>
+          <td>
+           
+            <button class="remind_button2" >Save in system</button>
+          </td>
+        </tr>
+        <tr>
+          <td>12289</td>
+          <td>130</td>
+          <td>credit card</td>
+          <td id = "status3">paid</td>
+          <td>
+            <button class="remind_button3" >Save in system</button>
+          </td> 
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  var remindButton1 = document.querySelector('.remind_button1');
+  var remindButton2 = document.querySelector('.remind_button2');
+  var remindButton3 = document.querySelector('.remind_button3');
+  remindButton1.addEventListener('click', function(){
+        alert('the bill payment is saved in the system');
+      remindButton1.disabled = true;
+  });
+   remindButton2.addEventListener('click', function() {
+        alert('the bill payment is saved in the system');  
+    remindButton2.disabled = true;
+  });
+  remindButton3.addEventListener('click',function() {
+        alert('the bill payment is saved in the system');  
+    remindButton3.disabled = true;
+  });
+  });
+  
+
+
+
+</script>
+</body>
+</html>
