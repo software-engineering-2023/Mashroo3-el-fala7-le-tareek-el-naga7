@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Banker's Contact Us</title>
+    <title>SO's Contact Us</title>
     <style>
         body {
             margin: 0;
@@ -95,7 +95,18 @@
       margin-top: 10px;
     }
 
-  
+    footer {
+    font-family: 'Roboto', sans-serif;
+    background-color: #81b29a;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: absolute ;
+    bottom: 0%;
+    left: 0;
+    width: 99%;
+    height: 35px;
+}
     </style>
 
 </head>
@@ -106,23 +117,13 @@
     <h1>Contact Us</h1>
     <a href="Home.html" class="sign-out-button">Sign Out</a>
 </header>
-<nav>
+ <nav>
     <ul class="menu">
-        <li><a href="BankerPage.html" id="home">Home</a></li>
-        <li><a href="ContactUs.html" id="contact">Contact</a></li>
-        <li class="dropdown">
-            <a href="#" id="client-account">Client's Account &#9662;</a>
-            <ul class="dropdown-menu">
-                <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
-                <li><a href="Liabilities_Banker.html">Liabilities</a></li>
-                <li><a href="Balance_Banker.html">Balance</a></li>
-            </ul>
-        </li>
-        <li><a href="Transfer.html">Transfer</a></li>
-        <li><a href="Bills_Banker.html">Bills</a></li>
-        <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+      <li><a href="HomeHome.html" id="home">Home</a></li>
+	  <li><a href="SignedOutAnnouncement.html" id="home">Announcements</a></li>
+	  <li><a href="SO_Contact.html" id="home">Contact Us</a></li>
     </ul>
-</nav>
+  </nav>
 <body>
 
 <div class="container">
@@ -142,7 +143,7 @@
         <p>Address: 20 StaakenerStrasse 23 13581</p>
     </div>
     <div class="block submit-complaint">
-        <h2>Submit a Complaint</h2>
+        <h2>Issue Signing in? Submit a Complaint</h2>
         <form id="complaint-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br><br>
@@ -155,13 +156,9 @@
     </div>
 
 </div>
-<div class="banner" id="transaction-banner">
-    <span class="banner-text" id="transaction-banner-text"></span>
-</div>
 <footer>
     <p>&copy; 2023 ABGBank. All rights reserved.</p>
 </footer>
-
 <script>
 
 var banner = document.getElementById('transaction-banner');
