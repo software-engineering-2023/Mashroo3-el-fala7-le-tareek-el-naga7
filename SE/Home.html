@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Home Page</title>
 </head>
 <body>
   <header>
@@ -24,95 +24,215 @@
       <li><a href="HomeHome.html" id="home">Home</a></li>
     </ul>
   </nav>
- <!-- Move the banner divs inside the main section -->
-<main class="main-content">
-  <section>
-    <h2>Login</h2>
-    <div class="form-container">
-      <form id="banker-login-form">
-        <div class="form-group">
-          <label for="u-name">Username:</label>
-          <input type="text" id="u-name" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" required>
-        </div>
-        <button id="Login" class="Login">Login</button>
-      </form>
+  <main class="main-content">
+    <section>
+      <h2>Login</h2>
+      <div class="form-container">
+        <form id="banker-login-form">
+          <div class="form-group">
+            <label for="u-name">Username:</label>
+            <input type="text" id="u-name" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+          </div>
+          <button id="Login" class="Login">Login</button>
+        </form>
+      </div>
+    </section>
+    <section>
+      <h2>Sign Up</h2>
+      <div class="form-container">
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="not-user-signup">Not a user? Sign up:</label>
+            <select id="not-user-signup">
+              <option value="">Select User Type</option>
+              <option value="client">Client</option>
+              <option value="banker">Banker</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="banner" id="signup-banner">
+      <span class="banner-text">Signup completed. Please login.</span>
     </div>
-  </section>
-  <section>
-    <h2>Sign Up</h2>
-    <div class="form-container">
-      <form id="banker-signup-form">
-        <div class="form-group">
-          <label for="new-national-id">New National ID:</label>
-          <input type="text" id="new-national-id" required>
-        </div>
-        <div class="form-group">
-          <label for="Name">Name:</label>
-          <input type="text" id="Name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="text" id="Email" required>
-        </div>
-        <div class="form-group">
-          <label for="new-username">New Username:</label>
-          <input type="text" id="new-username" required>
-        </div>
-        <div class="form-group">
-          <label for="EmployerID">(If Applicable) Employer ID:</label>
-          <input type="text" id="employerID">
-        </div>
-        <div class="form-group">
-          <label for="EmployerPass">(If Applicable) Employer Password:</label>
-          <input type="password" id="EmployerPass">
-        </div>
-        <div class="form-group">
-          <label for="new-password">New Password:</label>
-          <input type="password" id="new-password" required>
-        </div>
-        <button id="SignUp" class="SignUp">Sign Up</button>
-      </form>
+    <div class="banner" id="error-banner">
+      <span class="banner-text">Incorrect username/password.</span>
     </div>
-  </section>
-  <!-- Move the banners here -->
-  <div class="banner" id="signup-banner">
-    <span class="banner-text">Signup completed. Please login.</span>
-  </div>
-  <div class="banner" id="error-banner">
-    <span class="banner-text">Incorrect username/password.</span>
-  </div>
-</main>
+    <div id="form-section"></div>
+  </main>
 
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
   </footer>
   <script src="script.js"></script>
   <script>
-    document.getElementById("SignUp").addEventListener("click", function() {
+    document.getElementById("Signup").addEventListener("click", function() {
       var signupBanner = document.getElementById("signup-banner");
       signupBanner.style.display = "block";
     });
   </script>
   <script>
+    document.getElementById("not-user-signup").addEventListener("change", function() {
+      var userType = this.value;
+      var formSection = document.getElementById("form-section");
+      formSection.innerHTML = "";
+
+      if (userType === "client") {
+        formSection.innerHTML = `
+          <h2>Client Sign Up</h2>
+          <div class="form-container">
+            <form id="client-signup-form">
+              <div class="form-group">
+                <label for="client-national-id">National ID:</label>
+                <input type="text" id="client-national-id" required>
+              </div>
+              <div class="form-group">
+                <label for="client-name">Name:</label>
+                <input type="text" id="client-name" required>
+              </div>
+              <div class="form-group">
+                <label for="client-email">Email:</label>
+                <input type="text" id="client-email" required>
+              </div>
+              <div class="form-group">
+                <label for="client-username">Username:</label>
+                <input type="text" id="client-username" required>
+              </div>
+              <div class="form-group">
+                <label for="client-password">Password:</label>
+                <input type="password" id="client-password" required>
+              </div>
+              <button id="client-signup" class="SignUp">Sign Up</button>
+            </form>
+          </div>
+        `;
+      } else if (userType === "banker") {
+        formSection.innerHTML = `
+          <h2>Banker Sign Up</h2>
+          <div class="form-container">
+            <form id="banker-signup-form">
+              <div class="form-group">
+                <label for="banker-national-id">National ID:</label>
+                <input type="text" id="banker-national-id" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-name">Name:</label>
+                <input type="text" id="banker-name" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-email">Email:</label>
+                <input type="text" id="banker-email" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-username">Username:</label>
+                <input type="text" id="banker-username" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-password">Password:</label>
+                <input type="password" id="banker-password" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-employer-id">Employer ID:</label>
+                <input type="text" id="banker-employer-id" required>
+              </div>
+              <div class="form-group">
+                <label for="banker-employer-password">Employer Password:</label>
+                <input type="password" id="banker-employer-password" required>
+              </div>
+              <button id="banker-signup" class="SignUp">Sign Up</button>
+            </form>
+          </div>
+        `;
+      } else if (userType === "admin") {
+        formSection.innerHTML = `
+          <h2>Admin Sign Up</h2>
+          <div class="form-container">
+            <form id="admin-signup-form">
+              <div class="form-group">
+                <label for="admin-national-id">National ID:</label>
+                <input type="text" id="admin-national-id" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-name">Name:</label>
+                <input type="text" id="admin-name" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-email">Email:</label>
+                <input type="text" id="admin-email" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-username">Username:</label>
+                <input type="text" id="admin-username" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-password">Password:</label>
+                <input type="password" id="admin-password" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-admin-id">Admin ID:</label>
+                <input type="text" id="admin-admin-id" required>
+              </div>
+              <div class="form-group">
+                <label for="admin-admin-password">Admin Password:</label>
+                <input type="password" id="admin-admin-password" required>
+              </div>
+              <button id="admin-signup" class="SignUp">Sign Up</button>
+            </form>
+          </div>
+        `;
+      }
+
+      // Add event listener for the sign-up button
+      var signUpButton = formSection.querySelector("button.SignUp");
+      signUpButton.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent form submission
+        var form = formSection.querySelector("form");
+        var formInputs = form.querySelectorAll("input[required]");
+        var isFormValid = true;
+
+        for (var i = 0; i < formInputs.length; i++) {
+          if (formInputs[i].value.trim() === "") {
+            isFormValid = false;
+            break;
+          }
+        }
+
+        if (isFormValid) {
+          // All fields are filled, proceed with sign-up
+          alert("Sign-up successful!");
+        } else {
+          // Some fields are missing, display an alert message
+          alert("Please fill in all the required fields.");
+        }
+      });
+    });
+
     document.getElementById("Login").addEventListener("click", function(event) {
       event.preventDefault(); // Prevent form submission
-      var username = document.getElementById("u-name").value;
-      var password = document.getElementById("password").value;
+      var usernameInput = document.getElementById("u-name").value;
+      var passwordInput = document.getElementById("password").value;
 
-      if (username === "Banker" && password === "Banker123") {
-        window.location.href = "BankerPage.html";
-      } else if (username === "Client" && password === "Client123") {
+      // Check if the username and password are correct
+      if (usernameInput === "Client" && passwordInput === "Client123") {
+        // Redirect to ClientPage.html
         window.location.href = "ClientPage.html";
-      } else if (username === "Admin" && password === "Admin123") {
-        window.location.href = "AdminPage.html";
-      } else {
-        var errorBanner = document.getElementById("error-banner");
+      } else if (usernameInput === "Banker" && passwordInput === "Banker123"){
+        // Show the error banner
+		 window.location.href = "BankerPage.html";
+        
+      }else if (usernameInput === "Admin" && passwordInput === "Admin123"){
+	   window.location.href = "AdminPage.html";
+	  
+	  }else{
+	  
+	  var errorBanner = document.getElementById("error-banner");
         errorBanner.style.display = "block";
-      }
+		}
     });
   </script>
 </body>
