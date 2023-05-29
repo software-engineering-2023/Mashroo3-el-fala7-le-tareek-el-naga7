@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Replacement Request</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Replacement Request</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo_Banker.html">Personal Information</a></li>
+            <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+            <li><a href="Balance_Banker.html">Balance</a></li>
+            <li><a href="Loan_requests.html">Loan requests</a></li>
+            <li><a href="credit_card_requests.html">Credit requests</a></li>
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    <li> <a href="Complaints_banker.html">Complaints</a></li>
+    <li> <a href="Urgent_banker.html">Card Urgents</a></li>
+    <li> <a href="Complaints_banker.html">Card Replacement</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>Replacement Requests</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>User ID</th>
+          <th>name</th>
+          <th>address</th>
+          <th>Card Type</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1223</td>
+          <td>Assem</td>
+          <td>Ma3ady </td>
+          <td>Debit Card</td>
+          <td id = "status1">not replaced</td>
+          <td>
+            <button class="replace_button1" >replace card</button>
+          </td>
+        </tr>
+        <tr>
+            <td>1223</td>
+            <td>Ossama</td>
+            <td>Tagamo3</td>
+            <td>Credit Card</td>
+            <td id = "status2">not replaced</td>
+            <td>
+              <button class="replace_button2" >replace card</button>
+            </td>
+        </tr>
+        <tr>
+            <td>166223</td>
+            <td>Youssef</td>
+            <td>Madinet Nasr</td>
+            <td>Credit Card</td>
+            <td id = "status3">not replaced</td>
+            <td>
+              <button class="replace_button3" >replace card</button>
+            </td>
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  const replaceButton1 = document.querySelector('.replace_button1');
+  const replaceButton2 = document.querySelector('.replace_button2');
+  const replaceButton3 = document.querySelector('.replace_button3');
+  replaceButton1.addEventListener('click', function() {
+      alert('Card will be replaced shortly');  
+      document.getElementById('status1').innerHTML = "Replaced";
+      replaceButton1.disabled = true;
+       });
+   replaceButton2.addEventListener('click', function() {
+    alert('Card will be replaced shortly');  
+      document.getElementById('status2').innerHTML = "Replaced";
+      replaceButton2.disabled = true;
+  });
+  replaceButton3.addEventListener('click',function() {
+    alert('Card will be replaced shortly');   
+      document.getElementById('status3').innerHTML = "Replaced";
+      replaceButton3.disabled = true;
+  });
+  });
+  
+</script>
+</body>
+</html>

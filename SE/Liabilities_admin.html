@@ -42,6 +42,20 @@
         .credit-card-button, .loan-button {
             margin-top: 10px;
         }
+        .reminder_button {
+          font-family: 'Roboto', sans-serif;
+          padding: 10px 20px;
+          border: none;
+          background-color: #52796f;
+          color: white;
+          cursor: pointer;
+          font-size: 18px;
+          border-radius: 5px;
+      }
+      
+          .reminder_button:hover {
+              background-color: #354f52;
+          }
     </style>
 </head>
 <body>
@@ -65,7 +79,6 @@
           </ul>
         </li>
 		 <li><a href="Transfers_history.html">Transfer</a></li>
-         <li><a href="Bills_admin.html">Bills</a></li>
 		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
 
       </ul>
@@ -84,6 +97,7 @@
             <th>Due Amount</th>
             <th>Interest Rate</th>
             <th>Card Maximum Usage</th>
+            <th>Reminder</th>
           </tr>
         </thead>
         <tbody>
@@ -96,6 +110,9 @@
             <td>$14,200</td>
             <td>2%</td>
             <td>$50,000</td>
+            <td> <input type="text" id="remind-input" class="textbox" >
+              <button class="remind_button" >Notify</button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -133,12 +150,29 @@
         </tbody>
       </table>
     </div>
-    <div style="clear: both;"></div>
   </main>
+    <div style="clear: both;"></div>
+    <div class="banner" id="reminder-banner">
+      <span class="banner-text" id="reminder-banner-text"></span>
   <footer>
     <p>&copy; 2023 GUCBank. All rights reserved.</p>
   </footer>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var remindButton = document.querySelector('.remind_button');
+        remindButton.addEventListener('click', function() {
+          var banner = document.getElementById('reminder-banner');
 
+          // Get the banner text element
+          var bannerText = document.getElementById('reminder-banner-text');
+            var add1 = document.getElementById('remind-input').value;
+            bannerText.textContent = 'credit card due reminder message  will be sent  shortly';
+
+  banner.style.display = 'block';
+            remindButton.disabled = true;
+        });
+      });
+      </script>
 </body>
 </html>
