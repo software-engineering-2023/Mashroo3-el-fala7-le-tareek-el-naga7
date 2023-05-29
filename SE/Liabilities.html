@@ -68,7 +68,7 @@
      position: fixed;
       bottom: 0;
       right: 0;
-      margin-bottom: 400px;
+      margin-bottom: 300px;
       margin-right: 100px;
       display: none;
   }
@@ -87,7 +87,7 @@
    <nav>
     <ul class="menu">
       <li><a href="ClientPage.html" id="home">Home</a></li>
-      <li><a href="ContactUs.html" id="contact">Contact</a></li>
+      <li><a href="ClientContact.html" id="contact">Contact</a></li>
       <li class="dropdown">
         <a href="#" id="my-account">My Account &#9662;</a>
         <ul class="dropdown-menu">
@@ -106,7 +106,7 @@
         </ul>
       </li>
 	  <li><a href="CreditCardPoints.html">My Points</a></li>
-      <li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+      <li><a href="ClientAnnoun.html" id="anouncments">Announcements</a></li>
 	   <li><a href="Urgent.html" id="urgent">Urgent</a></li>
     </ul>
   </nav>
@@ -136,6 +136,16 @@
             <td>$14,200</td>
             <td>2%</td>
             <td>$50,000</td>
+          </tr>
+		  <tr>
+            <td>2</td>
+            <td>5286514701228401</td>
+            <td>193</td>
+            <td>04/2022</td>
+            <td>05/2026</td>
+            <td>$24,300</td>
+            <td>3%</td>
+            <td>$100,000</td>
           </tr>
         </tbody>
       </table>
@@ -196,8 +206,7 @@
           <input type="text" id="loan-amount" name="loan-amount">
           <label for="guarantee-account">Guaranteeing Account Number:</label>
           <input type="text" id="guarantee-account" name="guarantee-account">
-          <label for="full-name">Full Name:</label>
-          <input type="text" id="full-name" name="full-name">
+         
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -208,8 +217,7 @@
           <input type="text" id="card-limit" name="card-limit">
           <label for="guarantee-account-cc">Guaranteeing Account Number:</label>
           <input type="text" id="guarantee-account-cc" name="guarantee-account-cc">
-          <label for="full-name-cc">Full Name:</label>
-          <input type="text" id="full-name-cc" name="full-name-cc">
+          
           <label for="over-limit">Allow Over Limit:</label>
           <select id="over-limit" name="over-limit">
             <option value="yes">Yes</option>
@@ -221,12 +229,14 @@
 	  <div class="settle-credit-card">
   <h2>Settle Credit Card with Balance</h2>
   <form id="settle-credit-card-form">
-    <label for="credit-card-number">Card Number:</label>
-    <input type="text" id="credit-card-number" name="credit-card-number">
+  <select id="credit-card-number" name="credit-card-number">
+            <option value="Card1">Card 1: ****8372</option>
+            <option value="Card2">Card 2: ****8401</option>
+   </select>
     <label for="cvv">CVV:</label>
     <input type="text" id="cvv" name="cvv">
     <label for="settle-amount">Settle Amount:</label>
-    <input type="text" id="settle-amount" name="settle-amount">
+    <input type="text" id="settle-amount" name="settle-amount" value="0">
     <input type="submit" value="Submit">
   </form>
 </div>
@@ -278,21 +288,33 @@
       const loanPlan = document.getElementById('loan-plan').value;
       const loanAmount = document.getElementById('loan-amount').value;
       const guaranteeAccount = document.getElementById('guarantee-account').value;
-      const fullName = document.getElementById('full-name').value;
+      
+	  if (loanAmount === '' || guaranteeAccount === '' ) {
+    bannerText.textContent = 'Please fill all the fields!';
+      banner.style.display = 'block';
+  }
+  else{
 	   bannerText.textContent = 'Loan request sent';
       banner.style.display = 'block';
 	   loanApplicationForm.reset();
+	   }
 });
 creditCardApplicationForm.addEventListener('submit', (e) => {
       e.preventDefault();
       // Handle credit card application form submission
       const cardLimit = document.getElementById('card-limit').value;
       const guaranteeAccountCC = document.getElementById('guarantee-account-cc').value;
-      const fullNameCC = document.getElementById('full-name-cc').value;
+     
       const overLimit = document.getElementById('over-limit').value;
+	  if (cardLimit === '' || guaranteeAccountCC === '' ) {
+    bannerText.textContent = 'Please fill all the fields!';
+      banner.style.display = 'block';
+  }
+  else{
 	   bannerText.textContent = 'Credit card request sent';
       banner.style.display = 'block';
 	  creditCardApplicationForm.reset();
+	  }
 });
 
 
@@ -331,7 +353,27 @@ settleLoanForm.addEventListener('submit', function(event) {
   
   
   }
+  });
+settleCreditCardForm.addEventListener('submit', function(event) {
+   event.preventDefault(); // Prevent form submission for demonstration purposes
 
+   var selectedCard = document.getElementById("credit-card-number").value;
+    var cvvValue = document.getElementById("cvv").value;
+	 var sett = document.getElementById("settle-amount").value;
+
+    // Perform validation
+    if (selectedCard === "Card1" && cvvValue === "003") {
+      bannerText.textContent = 'Settling '+ selectedCard + ' for amount ' + sett;
+      banner.style.display = 'block';
+    } else if (selectedCard === "Card2" && cvvValue === "193") {
+      bannerText.textContent = 'Settling '+ selectedCard + ' for amount ' + sett;
+      banner.style.display = 'block';
+    } else {
+      bannerText.textContent = 'Please fill all the fields Correctly!';
+      banner.style.display = 'block';
+    }
+
+  
   
 });
 
