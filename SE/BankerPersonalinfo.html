@@ -48,7 +48,7 @@
         .buttons {
             margin-top: 10px;
         }
-    footer {     font-family: 'Roboto', sans-serif;     background-color: #81b29a;     padding: 10px;     text-align: center;     color: white;     position: absolute ;     bottom: 0%;     left: 0;     width: 99%;     height: 35px;  }
+    footer {     font-family: 'Roboto', sans-serif;     background-color: #81b29a;     padding: 10px;     text-align: center;     color: white;     position: Fixed ;     bottom: 0%;     left: 0;     width: 99%;     height: 25px;  }
 	</style>
 </head>
 <body>
@@ -60,24 +60,23 @@
 	<a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
    <nav>
-      <ul class="menu">
-        <li><a href="BankerPage.html" id="home">Home</a></li>
-        <li class="dropdown">
-          <a href="#" id="my-account">My Account &#9662;</a>
-          <ul class="dropdown-menu">
-               <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
-            <li><a href="Balance_Banker.html">Balance</a></li>
-            <li><a href="User search.html">Transfer History</a></li>	
-            <li><a href="Loan_requests.html">Loan requests</a></li>
-            <li><a href="credit_card_requests.html">Credit requests</a></li>
-			
-          </ul>
-        </li>
-		 <li><a href="Transfer.html">Transfer</a></li>
-		  <li><a href="BillsBanker.html">Bills</a></li>
-		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
-
-      </ul>
+    <ul class="menu">
+      <li class="dropdown">
+        <a href="#" id="my-account">Client information &#9662;</a>
+        <ul class="dropdown-menu">
+          <li><a href="PersonalinfoBanker.html">Personal Information</a></li>
+          <li><a href="Balance_Banker.html">Balance</a></li>
+          <li><a href="User search.html">Transfer History</a></li>	
+          <li><a href="Loan_requests.html">Loan requests</a></li>
+          <li><a href="credit_card_requests.html">Credit requests</a></li>
+        </ul>
+      </li>
+  <li><a href="AnouncementsBanker.html" id="anouncments">Anouncements</a></li>
+  <li><a href="Complaints_banker.html">Complaints</a></li>
+  <li> <a href="Urgent_banker.html">Card Urgents</a></li>
+  <li> <a href="Card_replacement.html">Card Replacement</a></li>
+  <li> <a href="Banker_points.html">Redeem points</a></li>
+    </ul>
     </nav>
   <main>
     <div class="left-side">
@@ -148,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
       bannerText.textContent = 'New Address: ' + add + ' Will be added shortly';
       banner.style.display = 'block';
+
    
       
    
