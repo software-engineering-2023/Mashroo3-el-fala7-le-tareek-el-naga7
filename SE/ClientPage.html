@@ -12,11 +12,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
     <title>Client Page</title>
 	<style>
-	
+	table {
+  width: 30%;
+  flex-direction:column;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  order:2;
+}
+
+table th,
+table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+
 	main {
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: flex-start;
+  gap:20px;
+}
+main > div {
+flex-gow:1;
+
 }
 
 .reminders-window,
@@ -27,7 +60,16 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.reminders-window{
+order: 1;
 
+
+}
+
+.notifications-window {
+order: 3;
+
+}
 h2 {
   margin-bottom: 10px;
   font-size: 18px;
@@ -147,6 +189,56 @@ li {
     </ul>
   </nav>
   <main>
+  <table>
+    <thead>
+      <tr>
+        <th>Request Type</th>
+        <th>Request ID</th>
+        <th>Request Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Credit Card</td>
+        <td>298373</td>
+        <td>Pending</td>
+      </tr>
+      <tr>
+        <td>Personal Loan</td>
+        <td>129631</td>
+        <td>Rejected</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction Type</th>
+        <th>Amount</th>
+        <th>To</th>
+		<th>Transaction Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>POS</td>
+        <td>$200</td>
+        <td>Carrefour</td>
+		<td>2023-05-19</td>
+      </tr>
+      <tr>
+        <td>ATM</td>
+        <td>$100</td>
+        <td>N/A</td>
+		<td>2023-05-18</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+
+ 
   <div class="reminders-window">
     <h2>Reminders</h2>
 	
