@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <title>User search</title>
+    <style>
+      .center_container{
+        float: center;
+        width: 50%;
+        padding-inline: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .right_side{
+      float: right;
+            width: 100%;
+            padding-right: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    }
+    .admin-menu {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e07a5f;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 0;
+  }
+  
+  .admin-menu li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+      .admin-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          text-decoration: none;
+          padding: 5px 10px;
+          transition: background-color 0.3s ease;
+      }
+  
+  .admin-menu li a:hover {
+    background-color: #d9d9d9;
+  }
+  /* Existing styles */
+  
+  /* Existing styles */
+  
+  .admin-menu li.dropdown {
+    position: relative;
+  }
+  
+  .admin-dropdown-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: #777777;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 999; /* Adjust the z-index value as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-menu li.dropdown:hover .admin-dropdown-menu {
+    display: block;
+  }
+  
+  .admin-dropdown-menu li {
+    margin-bottom: 5px;
+    padding:5px;
+  }
+  
+      .admin-dropdown-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: #00529f;
+          text-decoration: none;
+          padding: 5px 10px;
+          display: block;
+      }
+  
+  .admin-dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+  }
+  .notifications-window {
+    width: 150%;
+    padding: 20px;
+    
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+
+        <div class="logo">
+            <img src="SE/logo.png" alt="Logo">
+        </div>
+        <h1>
+            ABG Bank
+        </h1>
+        <a href="Home.html" class="sign-out-button">Sign Out</a>
+    </header>
+   <nav>
+      <ul  class="admin-menu">
+        <li><a href="BankerPage.html" id="home">Home</a></li>
+        
+          
+   </nav>
+      <div class="center_container">
+        <div class="buttons">
+          <label for="userid-input">Entering id of Client:</label>
+          <input type="text" id="userid-input" class="textbox" placeholder="user_id">
+          <button class="UseridButton" >view user transactions</button>
+        </div>
+      </div>
+    </div>
+  
+    </div>
+
+    <div style="clear: both;"></div>
+	<div class="banner" id="announce-banner">
+  <span class="banner-text" id="announceInfo-banner-text"></span>
+</div>
+</div>
+<footer>
+  <p>&copy; 2023 ABG Bank. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+    var userButton = document.querySelector('.UseridButton');
+    userButton.addEventListener('click', function() {
+      var user_id = document.getElementById('userid-input').value;
+      if(user_id == ""){
+        alert('Please enter Client user id');
+      }else{
+      alert('Gaining access to User with an id ' + user_id);
+    }
+   
+  });
+
+  // Add click event listener to the button
+ 
+})
+var announceButton = document.querySelector('.announcement_button');
+announceButton.addEventListener('click', function(){
+  var banner = document.getElementById('announce-banner');
+
+  // Get the banner text element
+  var bannerText = document.getElementById('announceInfo-banner-text');
+  var info = document.getElementById('announce-input').value;
+  // Set the banner text
+  bannerText.textContent = 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................'+ 'Announcement message ' + info + ' will be added' + ' shortly.' +'...................................' ;
+
+  // Show the banner
+  banner.style.display = 'block';
+});
+  </script>
+        </body>
+</html>
