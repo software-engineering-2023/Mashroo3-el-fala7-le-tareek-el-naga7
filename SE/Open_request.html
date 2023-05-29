@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-  <title>Close accounts</title>
+  <title>Open accounts</title>
   <style>
       .left-side {
     margin: 0 auto;
@@ -61,10 +61,10 @@
           padding: 5px 10px;
           transition: background-color 0.3s ease;
       }
-
-          .admin-menu li a:hover {
-              background-color: #AE3F21;
-          }
+  
+  .admin-menu li a:hover {
+    background-color: #d9d9d9;
+  }
   /* Existing styles */
   
   /* Existing styles */
@@ -112,7 +112,7 @@
   <div class="logo">
       <img src="SE/logo.png" alt="Logo">
     </div>
-    <h1>Close accounts</h1>
+    <h1>Open accounts</h1>
 	<a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
    <nav>
@@ -120,15 +120,18 @@
         <li><a href="AdminPage.html" id="home">Home</a></li>
         <li><a href="ContactUs.html" id="contact">Contact</a></li>
         <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
           <ul class="admin-dropdown-menu">
             <li><a href="Personalinfo_admin.html">Personal Information</a></li>
             <li><a href="Liabilities_admin.html">Liabilities</a></li>
             <li><a href="Balance_admin.html">Balance</a></li>
-            <li><a href="AdminTransactions.html">Transactions</a></li>
+            <li><a href="ClientTransactions.html">Transactions</a></li>
           </ul>
         </li>
-		<li><a href="AnouncementsAdmin.html" id="anouncments">Announcements</a></li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
     <li> <a href="Complaints_admin.html">Complaints</a></li>
+    <li><a href="Close-requests.html">Request accounts close</a></li>
+    <li><a href="Open-request.html">Request accounts open</a></li>
       </ul>
     </nav>
  <main>
@@ -139,7 +142,6 @@
         <thead>
         <tr>
           <th>User_ID</th>
-          <th>Account Number</th>
           <th>status</th>
           <th>Response</th>
         </tr>
@@ -147,26 +149,23 @@
         <tbody>
         <tr>
           <td id = "userid1">1223</td>
-          <td >1223</td>
-          <td id = "status1">not closed</td>
+          <td id = "status1">not opened</td>
           <td>
-            <button class="close_button1" >Close account</button>
+            <button class="open_button1" >Open account</button>
           </td>
         </tr>
         <tr>
           <td id = "userid2">13223</td>
-          <td >1223</td>
-          <td id = "status2">not closed</td>
+          <td id = "status2">not opened</td>
           <td>
-            <button class="close_button2" >Close account</button>
+            <button class="open_button2" >Open account</button>
           </td> 
         </tr>
         <tr>
           <td id="userid3">14223</td>
-          <td >1223</td>
-          <td id = "status3">not closed</td>
+          <td id = "status3">not opened</td>
           <td>
-            <button class="close_button3" >Close account</button>
+            <button class="open_button3" >Open account</button>
           </td> 
         </tr>
         <tr>
@@ -184,23 +183,22 @@
 <script>
  
 document.addEventListener("DOMContentLoaded", function() {
-  var responseButton1 = document.querySelector('.close_button1');
-  var responseButton2 = document.querySelector('.close_button2');
-  var responseButton3 = document.querySelector('.close_button3');
-  var id;
+  var responseButton1 = document.querySelector('.open_button1');
+  var responseButton2 = document.querySelector('.open_button2');
+  var responseButton3 = document.querySelector('.open_button3');
   responseButton1.addEventListener('click', function() {
-      alert('Account of user Will be closed shortly');  
-      document.getElementById('status1').innerHTML = "Closed";
+      alert('New Account of user  Will be open shortly');  
+      document.getElementById('status1').innerHTML = "Opened";
       responseButton1.disabled = true;
   });
    responseButton2.addEventListener('click', function() {
-      alert('Account of user   Will be close shortly');  
-      document.getElementById('status2').innerHTML = "Closed";
+      alert(' New Account of user Will be open shortly');  
+      document.getElementById('status2').innerHTML = "Opened";
       responseButton2.disabled = true;
   });
   responseButton3.addEventListener('click',function() {
-      alert('Account of user   Will be close shortly');  
-      document.getElementById('status3').innerHTML = "Closed";
+      alert('New Account of user  Will be open shortly');  
+      document.getElementById('status3').innerHTML = "Opened";
       responseButton3.disabled = true;
   });
   });

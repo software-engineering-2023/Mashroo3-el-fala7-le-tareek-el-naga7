@@ -82,9 +82,9 @@ header {
         display: block;
     }
 
-.dropdown-menu li a:hover {
-  background-color: #e0e0e0;
-}
+        .dropdown-menu li a:hover {
+            background-color: #DBE9E2;
+        }
 
 
 .logo {
