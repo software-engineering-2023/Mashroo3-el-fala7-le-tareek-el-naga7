@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-  <title>Close accounts</title>
+  <title>Reminders</title>
   <style>
       .left-side {
     margin: 0 auto;
@@ -112,7 +112,7 @@
   <div class="logo">
       <img src="SE/logo.png" alt="Logo">
     </div>
-    <h1>Close accounts</h1>
+    <h1>Reminders</h1>
 	<a href="Home.html" class="sign-out-button">Sign Out</a>
   </header>
    <nav>
@@ -125,7 +125,6 @@
             <li><a href="Personalinfo_admin.html">Personal Information</a></li>
             <li><a href="Liabilities_admin.html">Liabilities</a></li>
             <li><a href="Balance_admin.html">Balance</a></li>
-            <li><a href="ClientTransactions.html">Transactions</a></li>
           </ul>
         </li>
 		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
@@ -139,35 +138,46 @@
       <table>
         <thead>
         <tr>
-          <th>User_ID</th>
-          <th>Account Number</th>
+          <th>User ID</th>
+          <th>Bill ID</th>
+          <th>Reminder date</th>
+          <th>bill type</th>
           <th>status</th>
           <th>Response</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td id = "userid1">1223</td>
-          <td >1223</td>
-          <td id = "status1">not closed</td>
+          <td>1223</td>
+          <td>132</td>
+          <td>4/3/2002</td>
+          <td>telephone</td>
+          <td id = "status1">no reminder sent</td>
           <td>
-            <button class="close_button1" >Close account</button>
+            <input type="text" id="remind-input1" class="textbox" placeholder="remind">
+            <button class="remind_button1" >Notify</button>
           </td>
         </tr>
         <tr>
-          <td id = "userid2">13223</td>
-          <td >1223</td>
-          <td id = "status2">not closed</td>
+          <td>1213</td>
+          <td>122</td>
+          <td>4/3/2002</td>
+          <td>gas</td>
+          <td id = "status2">no reminder sent</td>
           <td>
-            <button class="close_button2" >Close account</button>
-          </td> 
+            <input type="text" id="remind-input2" class="textbox" placeholder="remind">
+            <button class="remind_button2" >Notify</button>
+          </td>
         </tr>
         <tr>
-          <td id="userid3">14223</td>
-          <td >1223</td>
-          <td id = "status3">not closed</td>
+          <td>12289</td>
+          <td>130</td>
+          <td>4/3/2002</td>
+          <td>electricity</td>
+          <td id = "status3">no reminder sent</td>
           <td>
-            <button class="close_button3" >Close account</button>
+            <input type="text" id="remind-input3" class="textbox" placeholder="remind">
+            <button class="remind_button3" >Notify</button>
           </td> 
         </tr>
         <tr>
@@ -185,31 +195,27 @@
 <script>
  
 document.addEventListener("DOMContentLoaded", function() {
-  var responseButton1 = document.querySelector('.close_button1');
-  var responseButton2 = document.querySelector('.close_button2');
-  var responseButton3 = document.querySelector('.close_button3');
-  var id;
-  responseButton1.addEventListener('click', function() {
+  var remindButton1 = document.querySelector('.remind_button1');
+  var remindButton2 = document.querySelector('.remind_button2');
+  var remindButton3 = document.querySelector('.remind_button3');
+  remindButton1.addEventListener('click', function() {
     
-  
-      var id = document.getElementById('userid1').value;
-      alert('Account of user id '+ id + ' Will be added shortly');  
-      document.getElementById('status1').innerHTML = "Closed";
-      responseButton1.disabled = true;
+      var add1 = document.getElementById('remind-input1').value;
+      alert('the reminder message '+ add1 + ' Will be sent  shortly');  
+      document.getElementById('status1').innerHTML = "Reminder sent";
+      remindButton1.disabled = true;
   });
-   responseButton2.addEventListener('click', function() {
-    
-    var id = document.getElementById('userid2').value;
-      alert('Account of user id '+ id  + ' Will be close shortly');  
-      document.getElementById('status2').innerHTML = "Closed";
-      responseButton2.disabled = true;
+   remindButton2.addEventListener('click', function() {
+    var add2 = document.getElementById('remind-input2').value;
+      alert('Response '+ add2 + ' Will be sent shortly');  
+      document.getElementById('status2').innerHTML = "Reminder sent";
+      remindButton2.disabled = true;
   });
-  responseButton3.addEventListener('click',function() {
-   
-    var id = document.getElementById('userid3').value;
-      alert('Account of user id '+ id + ' Will be added shortly');  
-      document.getElementById('status3').innerHTML = "Closed";
-      responseButton3.disabled = true;
+  remindButton3.addEventListener('click',function() {
+    var add3 = document.getElementById('remind-input3').value;
+      alert('Response '+ add3 + ' Will be sent shortly');  
+      document.getElementById('status3').innerHTML = "Reminder sent";
+      remindButton3.disabled = true;
   });
   });
   
