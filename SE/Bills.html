@@ -359,18 +359,48 @@ document.addEventListener("DOMContentLoaded", function() {
   var bannerText = document.getElementById('bills-banner-text');
 
   elec.addEventListener('click', function() {
+   var account = document.querySelector('#electricity-bill-id').value;
+      var amount = document.querySelector('#electricity-bill-amount').value;
+if (!account || !amount) {
+        bannerText.textContent = 'Please fill all the fields';
+      banner.style.display = 'block';
+        return;
+      }
+
       bannerText.textContent = 'Electricity bill payment will be made';
       banner.style.display = 'block';
   });
     tele.addEventListener('click', function() {
+	
+	var account = document.querySelector('#telephone-bill-id').value;
+      var amount = document.querySelector('#telephone-bill-amount').value;
+if (!account || !amount) {
+        bannerText.textContent = 'Please fill all the fields';
+      banner.style.display = 'block';
+        return;
+      }
       bannerText.textContent = 'Telephone bill payment will be made';
       banner.style.display = 'block';
   });
    water.addEventListener('click', function() {
+   var account = document.querySelector('#water-bill-id').value;
+      var amount = document.querySelector('#water-amount').value;
+if (!account || !amount) {
+        bannerText.textContent = 'Please fill all the fields';
+      banner.style.display = 'block';
+        return;
+      }
       bannerText.textContent = 'Water bill payment will be made';
       banner.style.display = 'block';
   });
   gas.addEventListener('click', function() {
+  var account = document.querySelector('#gas-bill-id').value;
+      var amount = document.querySelector('#gas-amount').value;
+if (!account || !amount) {
+        bannerText.textContent = 'Please fill all the fields';
+      banner.style.display = 'block';
+        return;
+      }
    bannerText.textContent = 'Gas bill payment will be made';
       banner.style.display = 'block';
   });
@@ -386,7 +416,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
       var billType = document.getElementById('bill-type').value;
       var billNumber = document.getElementById('bill-number').value;
-
+		if (!billType || !billNumber ) {
+ reminderBannerText.textContent = 'Please fill all the fields';
+     reminderBanner.style.display = 'block';
+	  return;
+      }
       reminderBannerText.textContent = 'Reminder will be set for ' + billType + ' bill with number ' + billNumber;
       reminderBanner.style.display = 'block';
 
