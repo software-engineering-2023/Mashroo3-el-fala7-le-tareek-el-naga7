@@ -183,14 +183,19 @@
     <button class="RequestButton">Send Bank Statement Request</button>
   </div>
   <div class="button2">
-   <label for="acc-input">Close Account:</label>
+    <label for="acc-input">Close Account:</label>
+    <select id="account-type-select">
+      <option value="savings1">Savings Account 1</option>
+      <option value="savings2">Savings Account 2</option>
+      <option value="current1">Current Account 1</option>
+    </select>
     <input type="text" id="acc-input" class="textbox" placeholder="Password">
     <button class="CloseButton">Close Account</button>
   </div>
 </div>
 
     <div style="clear: both;"></div>
-	<div class="banner" id="personalInfo-banner">
+  <div class="banner" id="personalInfo-banner">
   <span class="banner-text" id="personalInfo-banner-text"></span>
 </div>
   </main>
@@ -244,17 +249,16 @@ document.addEventListener("DOMContentLoaded", function(){
   });
   CloseButton.addEventListener('click', function() {
     var password = document.querySelector('#acc-input').value;
+    var accountType = document.querySelector('#account-type-select').value;
     if (password === 'Client123') {
-       bannerText.textContent = 'Your Close account request has been sent!';
+      bannerText.textContent = 'Your Close account request for ' + accountType + ' has been sent!';
+      banner.style.display = 'block';
+    } else {
+      bannerText.textContent = 'Wrong Password!!!';
       banner.style.display = 'block';
     }
-	else{
-	bannerText.textContent = 'Wrong Password!!!';
-      banner.style.display = 'block';
-	
-	}
   });
-  });
+});
 
 
 
