@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
-    <title>Admin Page</title>
+    <title>User search</title>
     <style>
       .center_container{
         float: center;
@@ -104,18 +104,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .notifications-window:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 180px;
-  background-image: url('notif.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
     
     </style>
 </head>
@@ -132,47 +120,25 @@
     </header>
    <nav>
       <ul  class="admin-menu">
-        <li><a href="AdminPage.html" id="home">Home</a></li>
-        <li class="dropdown" >
-          <a href="#" id="client's_account">Client's Account &#9662;</a>
-          <ul class="admin-dropdown-menu" >
-            <li><a href="Personalinfo_admin.html">Personal Information</a></li>
-            <li><a href="Liabilities_admin.html">Liabilities</a></li>
-            <li><a href="Balance_admin.html">Balance</a></li>
-            <li><a href="ClientTransactions.html">Transactions</a></li>
-          </ul>
-        </li>
-        <li><a href="AnouncementsAdmin.html" id="anouncments">Announcements</a></li>
-           <li><a href="Complaints_admin.html">Complaints</a></li>
-           <li><a href="Close-requests.html">Request accounts close</a></li>
-      </ul>
+        <li><a href="BankerPage.html" id="home">Home</a></li>
+        
+          
    </nav>
       <div class="center_container">
         <div class="buttons">
           <label for="userid-input">Entering id of Client:</label>
           <input type="text" id="userid-input" class="textbox" placeholder="user_id">
-          <button class="UseridButton" >Go to client profile</button>
+          <button class="UseridButton" >view user transactions</button>
         </div>
       </div>
     </div>
-    <div class="right_side">
-      <div class="buttons">
-        <label for="announce-input">Entering a System Announcement:</label>
-        <input type="text" id="announce-input" class="textbox" placeholder="place an announce">
-        <button class="announcement_button" >Submit an Announcement</button>
-      </div>
+  
     </div>
 
     <div style="clear: both;"></div>
 	<div class="banner" id="announce-banner">
   <span class="banner-text" id="announceInfo-banner-text"></span>
 </div>
-<div class="notifications-window">
-  <h2>Notifications</h2>
-  <ul>
-    <li>New Announcement: "Security Alert: Phishing Scam Warning"</li>
-    <li>New Announcement: "Important Notice: Scheduled Manitenance"</li>
-  </ul>
 </div>
 <footer>
   <p>&copy; 2023 ABG Bank. All rights reserved.</p>
@@ -187,7 +153,7 @@
         alert('Please enter Client user id');
       }else{
       alert('Gaining access to User with an id ' + user_id);
-       document.getElementsByClassName('admin-dropdown-menu')[0].style.visibility = "visible"; 
+      window.location.href = "BankerTransactions.html";
     }
    
   });
