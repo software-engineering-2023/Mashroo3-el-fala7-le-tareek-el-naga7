@@ -187,7 +187,11 @@ document.addEventListener("DOMContentLoaded", function() {
       var acc = document.querySelector('#domestic-account').value;
       var am = document.querySelector('#domestic-amount').value;
       var bank = document.querySelector('#domestic-bank').value;
-
+	if (!acc || !am || !bank) {
+          bannerText.textContent = 'Please fill in all the fields';
+      banner.style.display = 'block';
+          return;
+		  }
       bannerText.textContent = 'Domestic Transfer: Transferring ' + am + ' to ' + acc + ' in ' + bank;
       banner.style.display = 'block';
     } else {
@@ -202,7 +206,11 @@ document.addEventListener("DOMContentLoaded", function() {
     if (password === 'Client123') {
       var acc = document.querySelector('#internal-account').value;
       var am = document.querySelector('#internal-amount').value;
-
+	if (!acc || !am ) {
+          bannerText.textContent = 'Please fill in all the fields';
+      banner.style.display = 'block';
+          return;
+		  }
       bannerText.textContent = 'Internal Transfer: Transferring ' + am + ' to ' + acc;
       banner.style.display = 'block';
     } else {
@@ -218,7 +226,11 @@ document.addEventListener("DOMContentLoaded", function() {
       var acc = document.querySelector('#international-account').value;
       var am = document.querySelector('#international-amount').value;
       var swift = document.querySelector('#international-swift').value;
-
+	if (!acc || !am || !swift) {
+          bannerText.textContent = 'Please fill in all the fields';
+      banner.style.display = 'block';
+          return;
+		  }
       bannerText.textContent = 'International Transfer: Transferring ' + am + ' to ' + acc + ' with Swift: ' + swift;
       banner.style.display = 'block';
     } else {

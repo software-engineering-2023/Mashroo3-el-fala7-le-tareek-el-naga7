@@ -212,7 +212,11 @@ document.addEventListener("DOMContentLoaded", function(){
   AddressButton.addEventListener('click', function() {
     
       var add = document.querySelector('#address-input').value;
-     
+      if (add.trim() === '') {
+                      bannerText.textContent = 'Fill the address box';
+      banner.style.display = 'block';
+                    return;
+                }
 
       bannerText.textContent = 'New Address: ' + add + ' Will be added shortly';
       banner.style.display = 'block';
@@ -223,7 +227,11 @@ document.addEventListener("DOMContentLoaded", function(){
    ReportButton.addEventListener('click', function() {
     
        var issue = document.querySelector('#issue-input').value;
-     
+      if (issue.trim() === '') {
+                    bannerText.textContent = 'Fill the complaint box';
+      banner.style.display = 'block';
+                    return;
+                }
 
       bannerText.textContent = 'Issue: ' + issue + 'Will be sent!';
       banner.style.display = 'block';

@@ -67,6 +67,12 @@
             margin-bottom: 20px;
         }
 
+.sav label{
+display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+
+}
         .transaction-label {
             display: block;
             font-weight: bold;
@@ -126,9 +132,18 @@
   </nav>
   <main>
     <div class="left-side">
-      <h2>Savings:</h2>
+      <h2>Savings Account 1:</h2>
       <div class="savings-window">
         724,937
+      </div>
+	   <div class="Sav-container">
+        <label for="sav-amount" class="sav-label">Open new account:</label>
+        
+        <select id="sav-card" class="sav-input">
+          <option value="Savings">Savings</option>
+          <option value="Current">Current</option>
+        </select>
+        <button class="sav-button">Open</button>
       </div>
     </div>
 	  <div class="line"></div>
@@ -193,7 +208,7 @@
   document.addEventListener('DOMContentLoaded', function() {
       // Get the "Add to Card" button element
       var addButton = document.querySelector('.transaction-button');
-
+var sav = document.querySelector('.sav-button');
       // Add click event listener to the button
       addButton.addEventListener('click', function() {
         // Get the selected card from the dropdown menu
@@ -212,6 +227,18 @@
         bannerText.textContent = 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.' +'...................................'+ 'Card ' + selectedCard + ' will be recharged with $' + transactionAmount + ' shortly.';
 
         // Show the banner
+        banner.style.display = 'block';
+      });
+	  sav.addEventListener('click', function() {
+        var acc = document.querySelector('#sav-card').value;
+
+
+        var banner = document.getElementById('transaction-banner');
+
+        var bannerText = document.getElementById('transaction-banner-text');
+        
+        bannerText.textContent =  acc + ' Account request will be sent shortly';
+
         banner.style.display = 'block';
       });
 
