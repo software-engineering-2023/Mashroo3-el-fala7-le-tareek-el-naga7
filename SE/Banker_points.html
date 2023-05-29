@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>redeem Request</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>redeem Request</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo_Banker.html">Personal Information</a></li>
+            <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+            <li><a href="Balance_Banker.html">Balance</a></li>
+            <li><a href="Loan_requests.html">Loan requests</a></li>
+            <li><a href="credit_card_requests.html">Credit requests</a></li>
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    <li> <a href="Complaints_banker.html">Complaints</a></li>
+    <li> <a href="Urgent_banker.html">Card Urgents</a></li>
+    <li> <a href="Card_replacement.html">Card Replacement</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>redeem Requests</h2>
+      <table>
+        <thead>
+        <tr>
+           <th>RequestID</th> 
+          <th>User ID</th>
+          <th>CreditCardID</th>
+          <th>Points</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>123</td>
+          <td>12523</td>
+          <td id = "CC_ID1">123</td>
+          <td>4000</td>
+          <td id = "status1">not redeemed</td>
+          <td>
+            <button class="redeem_button1" >redeem card points</button>
+          </td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>11223</td>
+            <td id = "CC_ID2">127</td>
+            <td>50</td>
+            <td id = "status2">not redeemed</td>
+            <td>
+              <button class="redeem_button2" >redeem card points</button>
+            </td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>166223</td>
+            <td id = "CC_ID3">121</td>
+            <td>90</td>
+            <td id = "status3">not redeemed</td>
+            <td>
+              <button class="redeem_button3" >redeem card points</button>
+            </td>
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  const redeemButton1 = document.querySelector('.redeem_button1');
+  const redeemButton2 = document.querySelector('.redeem_button2');
+  const redeemButton3 = document.querySelector('.redeem_button3');
+  redeemButton1.addEventListener('click', function() {
+    var card1 = document.getElementById('CC_ID1').value;
+      alert('Credit Card with ID '+ card1+' will be redeemed its points shortly');  
+      document.getElementById('status1').innerHTML = "Redeemed";
+      redeemButton1.disabled = true;
+       });
+   redeemButton2.addEventListener('click', function() {
+    var card2 = document.getElementById('CC_ID2').value;
+    alert('Credit Card with ID'+ card2+'will be redeemed its points shortly');  
+      document.getElementById('status2').innerHTML = "Redeemed";
+      redeemButton2.disabled = true;
+  });
+  redeemButton3.addEventListener('click',function() {
+    var card3 = document.getElementById('CC_ID3').value;
+    alert('Credit Card with ID'+ card3+'will be redeemed its points shortly');  
+      document.getElementById('status3').innerHTML = "Redeemed";
+      redeemButton3.disabled = true;
+  });
+  });
+  
+</script>
+</body>
+</html>
