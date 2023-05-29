@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Complaints</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    .admin-menu {
+      font-family: 'Roboto', sans-serif;
+      background-color: #e07a5f;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 0;
+  }
+  
+  .admin-menu li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+      .admin-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          text-decoration: none;
+          padding: 5px 10px;
+          transition: background-color 0.3s ease;
+      }
+  
+  .admin-menu li a:hover {
+    background-color: #d9d9d9;
+  }
+  /* Existing styles */
+  
+  /* Existing styles */
+  
+  .admin-menu li.dropdown {
+    position: relative;
+  }
+  
+  .admin-dropdown-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    background-color: #777777;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    z-index: 999; /* Adjust the z-index value as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .admin-menu li.dropdown:hover .admin-dropdown-menu {
+    display: block;
+  }
+  
+  .admin-dropdown-menu li {
+    margin-bottom: 5px;
+    padding:5px;
+  }
+  
+      .admin-dropdown-menu li a {
+          font-family: 'Roboto', sans-serif;
+          color: #00529f;
+          text-decoration: none;
+          padding: 5px 10px;
+          display: block;
+      }
+  
+  .admin-dropdown-menu li a:hover {
+    background-color: #e0e0e0;
+  }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Complaints</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="admin-menu">
+        <li><a href="BankerPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <ul class="admin-dropdown-menu">
+            <li><a href="Personalinfo_banker.html">Personal Information</a></li>
+            <li><a href="Liabilities_banker.html">Liabilities</a></li>
+            <li><a href="Balance_banker.html">Balance</a></li>
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    <li> <a href="Complaints_banker.html">Complaints</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>Complaints</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>Complaint_ID</th>
+          <th>Complaint Description</th>
+          <th>publication_date</th>
+          <th>sender_ID</th>
+          <th>type</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1223</td>
+          <td>credit card problem</td>
+          <td>4/3/2002</td>
+          <td>95885</td>
+          <td>financial</td>
+          <td id = "status1">no response recorded</td>
+          <td>
+            <input type="text" id="response-input1" class="textbox" placeholder="response">
+            <button class="response_button1" >Submit Response</button>
+          </td>
+        </tr>
+        <tr>
+          <td>13223</td>
+          <td>balance amount is incorrect</td>
+          <td>4/3/2002</td>
+          <td>95815</td>
+          <td>financial</td>
+          <td id = "status2">no response recorded </td>
+          <td>
+            <input type="text" id="response-input2" class="textbox" placeholder="response">
+            <button class="response_button2" >Submit Response</button>
+          </td> 
+        </tr>
+        <tr>
+          <td>14223</td>
+          <td>Can't redeem by credit card points to cashback</td>
+          <td>4/3/2002</td>
+          <td>95815</td>
+          <td>financial</td>
+          <td id = "status3">no response recorded</td>
+          <td>
+            <input type="text" id="response-input3" class="textbox" placeholder="response">
+            <button class="response_button3" >Submit Response</button>
+          </td> 
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  var responseButton1 = document.querySelector('.response_button1');
+  var responseButton2 = document.querySelector('.response_button2');
+  var responseButton3 = document.querySelector('.response_button3');
+  responseButton1.addEventListener('click', function() {
+    
+      var add1 = document.getElementById('response-input1').value;
+      alert('Response '+ add1 + ' Will be added shortly');  
+      document.getElementById('status1').innerHTML = "Resolved";
+      responseButton1.disabled = true;
+  });
+   responseButton2.addEventListener('click', function() {
+    var add2 = document.getElementById('response-input2').value;
+      alert('Response '+ add2 + ' Will be added shortly');  
+      document.getElementById('status2').innerHTML = "Resolved";
+      responseButton2.disabled = true;
+  });
+  responseButton3.addEventListener('click',function() {
+    var add3 = document.getElementById('response-input3').value;
+      alert('Response '+ add3 + ' Will be added shortly');  
+      document.getElementById('status3').innerHTML = "Resolved";
+      responseButton3.disabled = true;
+  });
+  });
+  
+
+
+
+</script>
+</body>
+</html>

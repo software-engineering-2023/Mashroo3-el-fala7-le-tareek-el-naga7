@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Loan Request</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Loan requests</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo_admin.html">Personal Information</a></li>
+            <li><a href="Liabilities_admin.html">Liabilities</a></li>
+            <li><a href="Balance_admin.html">Balance</a></li>
+            <li><a href="Loan_request.html">Loan requests</a></li>
+            <li><a href="Credit_request.html">Credit requests</a></li>
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    <li> <a href="Complaints_admin.html">Complaints</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>Loan Requests</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>Account Number</th>
+          <th>Amount</th>
+          <th>plan</th>
+          <th>Full Name</th>
+          <th>type</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1223</td>
+          <td>100,000</td>
+          <td>2%-1year</td>
+          <td>Ayman abdo</td>
+          <td>Car Loan</td>
+          <td id = "status1">no response recorded</td>
+          <td>
+            <button class="accept_button1" >Accept Loan</button>
+            <button class="reject_button1" >Reject Loan</button>
+          </td>
+        </tr>
+        <tr>
+            <td>1923</td>
+            <td>100,000</td>
+            <td>4%-2year</td>
+            <td>Omar el Seweidy</td>
+            <td>Persoanl Loan</td>
+            <td id = "status2">no response recorded</td>
+            <td>
+              <button class="accept_button2" >Accept Loan</button>
+              <button class="reject_button2" >Reject Loan</button>
+            </td>
+        </tr>
+        <tr>
+            <td>193</td>
+            <td>900,000</td>
+            <td>7%-3year</td>
+            <td>Omar el Seweidy</td>
+            <td>Persoanl Loan</td>
+            <td id = "status3">no response recorded</td>
+            <td>
+              <button class="accept_button3" >Accept Loan</button>
+              <button class="reject_button3" >Reject Loan</button>
+            </td>
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  const acceptButton1 = document.querySelector('.accept_button1');
+  const acceptButton2 = document.querySelector('.accept_button2');
+  const acceptButton3 = document.querySelector('.accept_button3');
+  const rejectButton1 = document.querySelector('.reject_button1');
+  const rejectButton2 = document.querySelector('.reject_button2');
+  const rejectButton3 = document.querySelector('.reject_button3');
+  acceptButton1.addEventListener('click', function() {
+      alert('Loan request Will be accepted shortly');  
+      document.getElementById('status1').innerHTML = "accepted";
+      acceptButton1.disabled = true;
+      rejectButton1.disabled = true;
+  });
+   acceptButton2.addEventListener('click', function() {
+      alert('Loan request Will be accepted shortly');  
+      document.getElementById('status2').innerHTML = "accepted";
+      acceptButton2.disabled = true;
+      rejectButton2.disabled = true;
+  });
+  acceptButton3.addEventListener('click',function() {
+      alert(' Loan request Will be accepted shortly');  
+      document.getElementById('status3').innerHTML = "accepted";
+      acceptButton3.disabled = true;
+      rejectButton3.disabled = true;
+  });
+  rejectButton1.addEventListener('click', function() {
+    alert('Loan request Will be rejected shortly');  
+    document.getElementById('status1').innerHTML = "rejected";
+    acceptButton1.disabled = true;
+    rejectButton1.disabled = true;
+});
+ rejectButton2.addEventListener('click', function() {
+    alert('Loan request Will be rejected shortly');  
+    document.getElementById('status2').innerHTML = "rejected";
+    acceptButton2.disabled = true;
+    rejectButton2.disabled = true;
+});
+rejectButton3.addEventListener('click',function() {
+    alert('Loan request Will be rejected shortly');  
+    document.getElementById('status3').innerHTML = "rejected";
+    acceptButton3.disabled = true;
+    rejectButton3.disabled = true;
+});
+  });
+  
+
+
+
+</script>
+</body>
+</html>

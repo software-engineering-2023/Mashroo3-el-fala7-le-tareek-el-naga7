@@ -125,6 +125,7 @@
             <li><a href="Personalinfo_admin.html">Personal Information</a></li>
             <li><a href="Liabilities_admin.html">Liabilities</a></li>
             <li><a href="Balance_admin.html">Balance</a></li>
+            <li><a href="ClientTransactions.html">Transactions</a></li>
           </ul>
         </li>
 		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
@@ -138,50 +139,31 @@
       <table>
         <thead>
         <tr>
-          <th>Complaint_ID</th>
-          <th>Complaint Description</th>
-          <th>publication_date</th>
-          <th>sender_ID</th>
-          <th>type</th>
+          <th>User_ID</th>
           <th>status</th>
           <th>Response</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>1223</td>
-          <td>software update failed</td>
-          <td>4/3/2002</td>
-          <td>95885</td>
-          <td>technical</td>
-          <td id = "status1">no response recorded</td>
+          <td id = "userid1">1223</td>
+          <td id = "status1">not closed</td>
           <td>
-            <input type="text" id="response-input1" class="textbox" placeholder="response">
-            <button class="response_button1" >Submit Response</button>
+            <button class="close_button1" >Close account</button>
           </td>
         </tr>
         <tr>
-          <td>13223</td>
-          <td>loading of home page is so slow</td>
-          <td>4/3/2002</td>
-          <td>95815</td>
-          <td>technical</td>
-          <td id = "status2">no response recorded </td>
+          <td id = "userid2">13223</td>
+          <td id = "status2">not closed</td>
           <td>
-            <input type="text" id="response-input2" class="textbox" placeholder="response">
-            <button class="response_button2" >Submit Response</button>
+            <button class="close_button2" >Close account</button>
           </td> 
         </tr>
         <tr>
-          <td>14223</td>
-          <td>paying credit card bill button is not working</td>
-          <td>4/3/2002</td>
-          <td>95815</td>
-          <td>technical</td>
-          <td id = "status3">no response recorded</td>
+          <td id="userid3">14223</td>
+          <td id = "status3">not closed</td>
           <td>
-            <input type="text" id="response-input3" class="textbox" placeholder="response">
-            <button class="response_button3" >Submit Response</button>
+            <button class="close_button3" >Close account</button>
           </td> 
         </tr>
         <tr>
@@ -199,26 +181,30 @@
 <script>
  
 document.addEventListener("DOMContentLoaded", function() {
-  var responseButton1 = document.querySelector('.response_button1');
-  var responseButton2 = document.querySelector('.response_button2');
-  var responseButton3 = document.querySelector('.response_button3');
+  var responseButton1 = document.querySelector('.close_button1');
+  var responseButton2 = document.querySelector('.close_button2');
+  var responseButton3 = document.querySelector('.close_button3');
+  var id;
   responseButton1.addEventListener('click', function() {
     
-      var add1 = document.getElementById('response-input1').value;
-      alert('Response '+ add1 + ' Will be added shortly');  
-      document.getElementById('status1').innerHTML = "Resolved";
+  
+      var id = document.getElementById('userid1').value;
+      alert('Account of user id '+ id + ' Will be added shortly');  
+      document.getElementById('status1').innerHTML = "Closed";
       responseButton1.disabled = true;
   });
    responseButton2.addEventListener('click', function() {
-    var add2 = document.getElementById('response-input2').value;
-      alert('Response '+ add2 + ' Will be added shortly');  
-      document.getElementById('status2').innerHTML = "Resolved";
+    
+    var id = document.getElementById('userid2').value;
+      alert('Account of user id '+ id  + ' Will be close shortly');  
+      document.getElementById('status2').innerHTML = "Closed";
       responseButton2.disabled = true;
   });
   responseButton3.addEventListener('click',function() {
-    var add3 = document.getElementById('response-input3').value;
-      alert('Response '+ add3 + ' Will be added shortly');  
-      document.getElementById('status3').innerHTML = "Resolved";
+   
+    var id = document.getElementById('userid3').value;
+      alert('Account of user id '+ id + ' Will be added shortly');  
+      document.getElementById('status3').innerHTML = "Closed";
       responseButton3.disabled = true;
   });
   });
