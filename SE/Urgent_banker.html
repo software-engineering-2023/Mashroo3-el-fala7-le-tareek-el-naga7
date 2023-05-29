@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+  <title>Urgent Request</title>
+  <style>
+      .left-side {
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+
+    .right-side {
+      float: right;
+      width: 50%;
+      padding-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+    
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">
+      <img src="SE/logo.png" alt="Logo">
+    </div>
+    <h1>Urgent Request</h1>
+	<a href="Home.html" class="sign-out-button">Sign Out</a>
+  </header>
+   <nav>
+      <ul class="menu">
+        <li><a href="AdminPage.html" id="home">Home</a></li>
+        <li><a href="ContactUs.html" id="contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" id="client-account">Client's Account &#9662;</a>
+          <ul class="dropdown-menu">
+            <li><a href="Personalinfo_Banker.html">Personal Information</a></li>
+            <li><a href="Liabilities_Banker.html">Liabilities</a></li>
+            <li><a href="Balance_Banker.html">Balance</a></li>
+            <li><a href="Loan_requests.html">Loan requests</a></li>
+            <li><a href="credit_card_requests.html">Credit requests</a></li>
+          </ul>
+        </li>
+		<li><a href="Anouncements.html" id="anouncments">Announcements</a></li>
+    <li> <a href="Complaints_banker.html">Complaints</a></li>
+      </ul>
+    </nav>
+ <main>
+  <div class="left-side">
+    <div class="left-side">
+      <h2>Urgent Requests</h2>
+      <table>
+        <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Card Type</th>
+          <th>Card Number</th>
+          <th>Reason</th>
+          <th>status</th>
+          <th>Response</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1223</td>
+          <td>Debit Card</td>
+          <td>123</td>
+          <td>Lost</td>
+          <td id = "status1">not freeze</td>
+          <td>
+            <button class="freeze_button1" >Freeze card</button>
+          </td>
+        </tr>
+        <tr>
+            <td>1223</td>
+            <td>Credit Card</td>
+            <td>123</td>
+            <td>Lost</td>
+            <td id = "status2">not freeze</td>
+            <td>
+              <button class="freeze_button2" >Freeze card</button>
+            </td>
+        </tr>
+        <tr>
+            <td>166223</td>
+            <td>Credit Card</td>
+            <td>13</td>
+            <td>Damaged</td>
+            <td id = "status3">not freeze</td>
+            <td>
+              <button class="freeze_button3" >Freeze card</button>
+            </td>
+        </tr>
+        <tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+ </main>
+
+  <footer>
+    <p>&copy; 2023 ABGBank. All rights reserved.</p>
+  </footer>  
+  <script src="script.js"></script>
+<script>
+ 
+document.addEventListener("DOMContentLoaded", function() {
+  const freezeButton1 = document.querySelector('.freeze_button1');
+  const freezeButton2 = document.querySelector('.freeze_button2');
+  const freezeButton3 = document.querySelector('.freeze_button3');
+  freezeButton1.addEventListener('click', function() {
+      alert('Card will be freezed shortly');  
+      document.getElementById('status1').innerHTML = "freeze";
+      freezeButton1.disabled = true;
+       });
+   freezeButton2.addEventListener('click', function() {
+    alert('Card will be freezed shortly');  
+      document.getElementById('status2').innerHTML = "freeze";
+      freezeButton2.disabled = true;
+  });
+  freezeButton3.addEventListener('click',function() {
+    alert('Card will be freezed shortly');   
+      document.getElementById('status3').innerHTML = "freeze";
+      freezeButton3.disabled = true;
+  });
+  });
+  
+</script>
+</body>
+</html>

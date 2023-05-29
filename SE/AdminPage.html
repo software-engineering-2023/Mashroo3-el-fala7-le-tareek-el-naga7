@@ -183,8 +183,12 @@
     var userButton = document.querySelector('.UseridButton');
     userButton.addEventListener('click', function() {
       var user_id = document.getElementById('userid-input').value;
+      if(user_id == ""){
+        alert('Please enter Client user id');
+      }else{
       alert('Gaining access to User with an id ' + user_id);
        document.getElementsByClassName('admin-dropdown-menu')[0].style.visibility = "visible"; 
+    }
    
   });
 
