@@ -262,6 +262,10 @@ li {
       <li>New Announcement: "Important Notice: Scheduled Manitenance"</li>
     </ul>
   </div>
+   <div class="banner" id="transaction-banner" >
+    <span class="banner-text" id="transaction-banner-text"></span>
+   
+  </div>
 </main>
 
   <footer>
@@ -271,9 +275,34 @@ li {
   
   
   <script>
+  var banner = document.getElementById('transaction-banner');
+
+        var bannerText = document.getElementById('transaction-banner-text');
+  var markCompletedButton = document.getElementById("mark-completed-button");
+        markCompletedButton.addEventListener("click", function() {
+            var reminderDropdown = document.getElementById("reminder-dropdown");
+            var selectedReminder = reminderDropdown.value;
+			
+			if(selectedReminder === "Reminder 1"){
+			 bannerText.textContent = 'Gas bill due 2023-07-15 will be marked as completed at next session restart';
+			 banner.style.display = 'block';
+		}
+		if(selectedReminder === "Reminder 2"){
+			 bannerText.textContent = 'Remember to settle the Credit card due amount will be marked as completed at next session restart';
+			 banner.style.display = 'block';
+		}
+		if(selectedReminder === "Reminder 3"){
+			 bannerText.textContent = 'Water bill due 2023-06-14 will be marked as completed at next session restart';
+			 banner.style.display = 'block';
+		}
+		});
 
 
 
 </script>
 </body>
 </html>
+
+
+  
+       
